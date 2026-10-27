@@ -56,14 +56,14 @@ L'ensemble des cartes couvre tout le périmètre demandé : rien d'important ne 
 
 ## Déroulement d'une demande
 
-1. **Cadrer.** Respecter exactement le périmètre donné (tout le cours, ou seulement une partie). Si un paquet existant est fourni, la suite le prolonge.
+1. **Cadrer.** Le cours est joint au message, ou déposé dans `a-traiter/` (l'élève y dépose ses fichiers depuis GitHub quand l'envoi de pièces jointes échoue) : si aucun fichier n'est joint, chercher dans `a-traiter/` (après `git pull`). Respecter exactement le périmètre donné (tout le cours, ou seulement une partie). Si un paquet existant est fourni, la suite le prolonge.
 2. **Paquet existant.** Le lire avec `outils/lire_apkg.py`, comprendre ce qui est couvert et comment, puis continuer sans doublon et dans la continuité. Les anciennes cartes ne sont pas modifiées : le nouveau paquet ne contient que la suite.
 3. **Connaître le prof.** Lire `profs/<matiere>.md`.
 4. **Analyser** le cours en profondeur et écrire `analyse.md` dans le dossier du chapitre : ce qu'il faut maîtriser et comment, le plan des cartes, les visuels prévus (créés ou capturés), les erreurs du cours repérées. Puis enchaîner directement.
 5. **Produire** les visuels puis les cartes.
 6. **Vérifier.** Générer l'aperçu de toutes les cartes et **regarder chaque image** : rendu des formules, lisibilité des visuels en clair et en sombre, tenue sur téléphone, absence de spoil. Relire la rigueur. Contrôler la couverture du périmètre.
 7. **Livrer** le `.apkg` avec un bilan court, pour information : ce qui a été fait, les choix notables, les corrections apportées au cours.
-8. **Mettre à jour** `profs/<matiere>.md` avec ce qui a été appris sur le prof, puis commit et push.
+8. **Mettre à jour** `profs/<matiere>.md` avec ce qui a été appris sur le prof. Déplacer (`git mv`) les fichiers traités de `a-traiter/` vers `cours/` du chapitre, pour que `a-traiter/` ne garde que ce qui reste à faire. Puis commit et push.
 
 ---
 
@@ -73,6 +73,7 @@ Tout est en français. Les outils sont dans `outils/` ; chacun affiche son aide 
 
 ### Arborescence
 ```
+a-traiter/                             cours déposés par l'élève, en attente de traitement
 profs/<matiere>.md                     carnet du prof, enrichi à chaque chapitre
 chapitres/<matiere>/<chapitre>/
     cours/        le cours fourni (PDF, images)
