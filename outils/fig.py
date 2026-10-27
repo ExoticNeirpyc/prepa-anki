@@ -9,7 +9,7 @@ Dans un script chapitres/…/visuels/nom.py :
     sauver(fig, "nom")        # → chapitres/…/media/nom.svg
 
 C1…C4 (dans C) sont les mêmes couleurs que les classes .c1…c4 des cartes.
-Les figures sont transparentes : en mode sombre, Anki les inverse (noir ↔ blanc).
+Les visuels restent identiques en mode sombre : la carte les pose sur un fond blanc.
 """
 
 import inspect

@@ -8,7 +8,7 @@ pages : rend les pages d'un PDF en PNG pour les lire. Avec --grille, superpose u
 
 capture : découpe une zone d'une page (fractions de 0 à 1 de la largeur et de la hauteur,
           depuis le coin haut gauche), en haute définition, puis nettoie le scan :
-          fond uniformisé, fond blanc rendu transparent (lisible en mode sombre),
+          fond uniformisé, fond blanc rendu transparent,
           marges vides retirées.
     python3 outils/scan.py capture cours.pdf --page 4 --zone 0.1 0.35 0.9 0.6 -o media/schema.png
     python3 outils/scan.py capture photo.jpg --zone 0 0 1 1 -o media/tableau.png --rotation -1.5

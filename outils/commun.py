@@ -209,7 +209,8 @@ th { background: var(--fond-remarque); }
 
 img { max-width: 100%; height: auto; display: block; margin: 0.6em auto; }
 img.inline { display: inline; margin: 0; vertical-align: middle; }
-.nightMode img:not(.brut), .night_mode img:not(.brut) { filter: invert(1) hue-rotate(180deg); }
+/* Visuels identiques dans les deux modes : en sombre, ils gardent leur fond blanc. */
+.nightMode img:not(.inline), .night_mode img:not(.inline) { background: #ffffff; padding: 8px; border-radius: 6px; box-sizing: border-box; }
 
 mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
 

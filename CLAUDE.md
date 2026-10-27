@@ -103,7 +103,7 @@ Classes CSS disponibles (rien n'oblige à les utiliser, et on peut écrire du st
 - `.attention` : piège ou erreur classique ; `.remarque` : complément discret ; `.ajout` : contenu absent du cours ;
 - `.c1` à `.c4` : couleurs sémantiques (texte), lisibles en clair et en sombre ;
 - `.cote` : deux blocs côte à côte sur ordi, empilés sur téléphone ;
-- images : inversées automatiquement en mode sombre ; ajouter `class="brut"` pour ne pas inverser (photo).
+- images : identiques en mode clair et sombre (en sombre, elles sont posées sur un fond blanc) ; `class="inline"` pour une petite image dans le texte.
 
 ### Outils
 - `outils/scan.py pages` : rend les pages d'un PDF en PNG pour les lire. `outils/scan.py capture` : découpe une zone d'une page en haute définition et nettoie le scan (fond blanc rendu transparent, contraste).
