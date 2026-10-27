@@ -1,0 +1,15 @@
+\begin{tikzpicture}[yscale=1.15]
+\draw[-{Stealth}] (-1.25,-2) -- (-1.25,2.1) node[above]{$E$};
+\foreach \x/\nom in {0/éthène, 2.5/butadiène, 4.9/butadiène}{\node[font=\small] at (\x+0.4,-2.3) {\nom};}
+\foreach \y/\t in {-1/{\alpha+\beta}, 1/{\alpha-\beta}}{\draw[line width=1pt] (0,\y) -- (0.8,\y); \node[font=\scriptsize,anchor=east] at (-0.05,\y) {$\t$};}
+\node at (0.4,-0.85) {$\uparrow\!\downarrow$};
+\foreach \x in {2.5,4.9}{
+  \foreach \y in {-1.62,-0.62,0.62,1.62}{\draw[line width=1pt] (\x,\y) -- (\x+0.8,\y);}
+  \node at (\x+0.4,-1.47) {$\uparrow\!\downarrow$}; \node at (\x+0.4,-0.47) {$\uparrow\!\downarrow$};}
+\foreach \y/\t in {-1.62/{\alpha+1{,}62\beta},-0.62/{\alpha+0{,}62\beta},0.62/{\alpha-0{,}62\beta},1.62/{\alpha-1{,}62\beta}}{\node[font=\scriptsize,anchor=west] at (5.75,\y) {$\t$};}
+\draw[c1,{Stealth}-{Stealth},line width=1pt] (0.85,-1) -- (2.45,0.62) node[pos=0.22,below right,font=\scriptsize]{$1{,}62|\beta|$};
+\draw[c1,{Stealth}-{Stealth},line width=1pt] (0.85,1) -- (2.45,-0.62) node[pos=0.22,above right,font=\scriptsize]{$1{,}62|\beta|$};
+\draw[c2,{Stealth}-{Stealth},line width=1pt] (3.35,-0.62) -- (4.85,0.62) node[pos=0.5,below right,font=\scriptsize]{$1{,}24|\beta|$};
+\node[c1,font=\scriptsize] at (1.4,1.95) {2 IFP de même $\Delta E$};
+\node[c2,font=\scriptsize] at (4.1,1.95) {$\Delta E$ plus petit};
+\end{tikzpicture}

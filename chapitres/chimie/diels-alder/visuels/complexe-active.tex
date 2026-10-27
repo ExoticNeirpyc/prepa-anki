@@ -1,0 +1,14 @@
+\input{da.macros}
+\begin{tikzpicture}
+% complexe activé
+\hexa{t}{(0,0)}
+\draw (t1) -- (t2) -- (t3) -- (t4) (t5) -- (t6);
+\draw[dashed] (t1)--(t6) (t4)--(t5);
+\draw[densely dotted] ($(t1)!0.17!(t2)!0.11cm!90:(t2)$) -- ($(t2)!0.17!(t1)!0.11cm!-90:(t1)$);
+\draw[densely dotted] ($(t2)!0.17!(t3)!0.11cm!90:(t3)$) -- ($(t3)!0.17!(t2)!0.11cm!-90:(t2)$);
+\draw[densely dotted] ($(t3)!0.17!(t4)!0.11cm!90:(t4)$) -- ($(t4)!0.17!(t3)!0.11cm!-90:(t3)$);
+\draw[densely dotted] ($(t5)!0.17!(t6)!0.11cm!90:(t6)$) -- ($(t6)!0.17!(t5)!0.11cm!-90:(t5)$);
+\draw (-1.05,1.05) -- (-1.15,1.05) -- (-1.15,-1.05) -- (-1.05,-1.05);
+\draw (1.05,1.05) -- (1.15,1.05) -- (1.15,-1.05) -- (1.05,-1.05);
+\node at (1.32,1.05) {$\ddagger$};
+\end{tikzpicture}

@@ -1,0 +1,9 @@
+\input{da.macros}
+\begin{tikzpicture}
+\cyclohexene{a}{(0,0)}{} \sC{a1}{90}{} \sH{a4}{270}{}
+\sC{a6}{65}{CN} \sH{a6}{0}{CN} \sC{a5}{295}{CN} \sH{a5}{-5}{CN}
+\node at (2.3,0) {$+$};
+\cyclohexene{b}{(3.9,0)}{} \sH{b1}{90}{} \sC{b4}{270}{}
+\sC{b6}{65}{CN} \sH{b6}{0}{CN} \sC{b5}{295}{CN} \sH{b5}{-5}{CN}
+\draw[c1,{Stealth}-{Stealth}] (0.4,-1.75) -- (3.5,-1.75) node[midway,below,font=\scriptsize]{énantiomères (racémique)};
+\end{tikzpicture}

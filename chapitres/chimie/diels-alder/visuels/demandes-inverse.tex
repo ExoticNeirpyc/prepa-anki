@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+\foreach \dx/\titre/\hd/\bd/\hp/\bp/\cas in {0/demande inverse/-1.7/0.4/-0.5/1.7/2}{
+\begin{scope}[xshift=\dx cm]
+\node[font=\small\bfseries] at (1.5,2.35) {\titre};
+\draw[-{Stealth}] (-0.75,-2.1) -- (-0.75,2.1) node[left]{$E$};
+\draw[line width=1pt] (0,\hd) node[left,font=\scriptsize]{HO} -- (0.8,\hd); \draw[line width=1pt] (0,\bd) node[left,font=\scriptsize]{BV} -- (0.8,\bd);
+\draw[line width=1pt] (2.2,\hp) -- (3,\hp) node[right,font=\scriptsize]{HO}; \draw[line width=1pt] (2.2,\bp) -- (3,\bp) node[right,font=\scriptsize]{BV};
+\node at (0.4,\hd+0.15) {$\uparrow\!\downarrow$}; \node at (2.6,\hp+0.15) {$\uparrow\!\downarrow$};
+\node[font=\small] at (0.4,-2.45) {diène}; \node[font=\small] at (2.6,-2.45) {diénophile};
+\ifnum\cas=1
+  \draw[c2,{Stealth}-{Stealth},line width=1.2pt] (0.8,\hd) -- (2.2,\bp) node[midway,above,sloped,font=\scriptsize]{IFP};
+  \draw[gray,densely dashed,{Stealth}-{Stealth}] (0.8,\bd) -- (2.2,\hp);
+  \node[font=\scriptsize,align=center] at (1.5,-3.1) {diène riche (D) : HO haute\\diénophile pauvre (A) : BV basse};
+\else
+  \draw[c2,{Stealth}-{Stealth},line width=1.2pt] (0.8,\bd) -- (2.2,\hp) node[midway,below,sloped,font=\scriptsize]{IFP};
+  \draw[gray,densely dashed,{Stealth}-{Stealth}] (0.8,\hd) -- (2.2,\bp);
+  \node[font=\scriptsize,align=center] at (1.5,-3.1) {diène pauvre : BV basse\\diénophile riche : HO haute};
+\fi
+\end{scope}}
+\end{tikzpicture}

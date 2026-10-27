@@ -1,0 +1,13 @@
+\input{da.macros}
+\begin{tikzpicture}
+% [4+2] : HO diène au-dessus, BV diénophile en dessous (seules les extrémités comptent)
+\node[font=\small\bfseries] at (1.2,2.25) {[4+2] : permise};
+\draw[gray] (0,1.2) -- (2.4,1.2); \node[font=\scriptsize,anchor=east] at (-0.15,1.2) {HO diène};
+\lobe{(0,1.2)}{0.60}{0.7} \lobe{(0.8,1.2)}{0.37}{0.7} \lobe{(1.6,1.2)}{-0.37}{0.7} \lobe{(2.4,1.2)}{-0.60}{0.7}
+\draw[gray] (0,-0.5) -- (2.4,-0.5); \node[font=\scriptsize,anchor=east] at (-0.15,-0.5) {BV diénophile};
+\lobe{(0,-0.5)}{-0.71}{0.7} \lobe{(2.4,-0.5)}{0.71}{0.7}
+\draw[c3,line width=1.2pt,{Stealth}-{Stealth}] (0,0.68) -- (0,0.05);
+\draw[c3,line width=1.2pt,{Stealth}-{Stealth}] (2.4,0.68) -- (2.4,0.05);
+
+\node[c3,font=\scriptsize,align=center] at (1.2,-1.55) {lobes face à face de même\\couleur = recouvrement $>0$};
+\end{tikzpicture}

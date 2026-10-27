@@ -110,7 +110,7 @@ Classes CSS disponibles (rien n'oblige à les utiliser, et on peut écrire du st
 
 ### Outils
 - `outils/scan.py pages` : rend les pages d'un PDF en PNG pour les lire. `outils/scan.py capture` : découpe une zone d'une page en haute définition et nettoie le scan (fond blanc rendu transparent, contraste).
-- `outils/tex2svg.py` : compile un visuel LaTeX (TikZ, circuitikz, chemfig, pgfplots…) en SVG. Couleurs `c1`…`c4` prédéfinies. Chemfig est en version 1.66 : les doublets s'écrivent avec `\charge` (`\lewis` n'existe plus).
+- `outils/tex2svg.py` : compile un visuel LaTeX (TikZ, circuitikz, chemfig, pgfplots…) en SVG. Couleurs `c1`…`c4` prédéfinies, ainsi que `\coin`, `\hach` et `\dbl` pour dessiner des molécules en TikZ (liaisons en coin, hachurées, doubles). `\input{nom}` inclut un fichier voisin (macros communes d'un chapitre). Chemfig est en version 1.66 : les doublets s'écrivent avec `\charge` (`\lewis` n'existe plus).
 - `outils/fig.py` : style matplotlib commun et `sauver()` en SVG, à importer dans les scripts de `visuels/`.
 - `outils/construire.py` : construit le `.apkg` d'un chapitre (ou de plusieurs) dans `sorties/`.
 - `outils/apercu.py` : rend les cartes en images (téléphone et ordi, clair et sombre) dans `apercu/` pour les vérifier.

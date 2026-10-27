@@ -1,0 +1,16 @@
+\input{da.macros}\input{meso.macros}
+\begin{tikzpicture}
+% acroléine : C1'=C2'-C3'=O
+\zz[1]{c}{(0.4,0)}{4}
+\draw (c1) -- (c2) -- (c3) -- (c4); \dbl{c1}{c2}{90} \dbl{c3}{c4}{90}
+\node[anchor=west,inner sep=1pt] at (c4) {$\overline{\underline{\mathrm{O}}}$};
+\node[font=\scriptsize,c1,anchor=east] at (c1) {C$\beta$};
+\fl{($(c1)!0.5!(c2)$)}{+(-90:0.45) and +(-90:0.45)}{($(c2)!0.5!(c3)+(0,0.1)$)}
+\fl{($(c3)!0.5!(c4)$)}{+(-90:0.45) and +(-90:0.4)}{($(c4)+(0.15,-0.2)$)}
+\node[rotate=90] at (1.5,-0.55) {$\longleftrightarrow$};
+\zz[1]{d}{(0.55,-1.75)}{4}
+\draw (d1) -- (d2) -- (d3) -- (d4); \dbl{d2}{d3}{-90}
+\node[anchor=east,inner sep=1pt,c3] at (d1) {$\oplus$};
+\node[anchor=west,inner sep=1pt] at (d4) {$\overline{\underline{\mathrm{O}}}^{\ominus}$};
+\node[font=\scriptsize,c3] at ($(d1)+(-0.2,-0.45)$) {C$\beta$ : $\delta^+$};
+\end{tikzpicture}

@@ -1,0 +1,17 @@
+\input{da.macros}\input{meso.macros}
+\begin{tikzpicture}
+% diène 1-substitué : MeO-C1=C2-C3=C4
+\zz{a}{(0,0)}{5}
+\node[anchor=east,inner sep=1pt] (o) at (a1) {$\mathrm{Me}\overline{\underline{\mathrm{O}}}$};
+\draw (a1) -- (a2) -- (a3) -- (a4) -- (a5); \dbl{a2}{a3}{90} \dbl{a4}{a5}{90}
+\node[font=\scriptsize,c1] at ($(a2)+(0,0.3)$) {1}; \node[font=\scriptsize,c1] at ($(a5)+(0.25,0)$) {4};
+\fl{($(o.north)+(0.1,0)$)}{+(80:0.5) and +(100:0.4)}{($(a1)!0.5!(a2)+(0,0.12)$)}
+\fl{($(a2)!0.5!(a3)$)}{+(-90:0.45) and +(-90:0.45)}{($(a3)!0.5!(a4)+(0,-0.1)$)}
+\fl{($(a4)!0.5!(a5)$)}{+(-90:0.5) and +(-80:0.5)}{($(a5)+(0.08,-0.15)$)}
+\node[rotate=90] at (1.7,-0.55) {$\longleftrightarrow$};
+\zz{b}{(0.35,-1.75)}{5}
+\node[anchor=east,inner sep=1pt] at (b1) {$\mathrm{Me}\overline{\mathrm{O}}^{\oplus}$};
+\draw (b1) -- (b2) -- (b3) -- (b4) -- (b5); \dbl{b1}{b2}{-90} \dbl{b3}{b4}{-90}
+\node[anchor=west,inner sep=1pt,c2] at (b5) {$\ominus$};
+\node[font=\scriptsize,c2] at ($(b5)+(0.1,-0.35)$) {C4 : $\delta^-$};
+\end{tikzpicture}

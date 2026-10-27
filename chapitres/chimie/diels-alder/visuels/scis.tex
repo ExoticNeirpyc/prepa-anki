@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+% s-trans
+\draw (0,0) -- (0.7,0.4) -- (1.4,0) -- (2.1,0.4);
+\draw ($(0,0)!0.17!(0.7,0.4)!0.11cm!90:(0.7,0.4)$) -- ($(0.7,0.4)!0.17!(0,0)!0.11cm!-90:(0,0)$);
+\draw ($(1.4,0)!0.17!(2.1,0.4)!0.11cm!-90:(2.1,0.4)$) -- ($(2.1,0.4)!0.17!(1.4,0)!0.11cm!90:(1.4,0)$);
+\node[font=\small] at (1.05,-0.55) {s-trans};
+\node[font=\scriptsize,c3] at (1.05,-0.95) {plus stable};
+\draw[-{Stealth[harpoon]}] (2.55,0.28) -- (3.55,0.28);
+\draw[-{Stealth[harpoon]}] (3.55,0.12) -- (2.55,0.12);
+\node[font=\scriptsize] at (3.05,-0.3) {rapide à TA};
+% s-cis
+\draw (4.6,0.9) -- (4.25,0.3) -- (4.6,-0.3) -- (5.3,-0.3);
+\draw (4.6,0.9) -- (5.3,0.9);
+\draw ($(4.6,0.9)!0.17!(5.3,0.9)!0.11cm!-90:(5.3,0.9)$) -- ($(5.3,0.9)!0.17!(4.6,0.9)!0.11cm!90:(4.6,0.9)$);
+\draw ($(4.6,-0.3)!0.17!(5.3,-0.3)!0.11cm!90:(5.3,-0.3)$) -- ($(5.3,-0.3)!0.17!(4.6,-0.3)!0.11cm!-90:(4.6,-0.3)$);
+\fill (5.3,0.9) circle (1.2pt) node[right,font=\scriptsize] {C1};
+\fill (5.3,-0.3) circle (1.2pt) node[right,font=\scriptsize] {C4};
+\draw[c2,densely dashed,{Stealth}-{Stealth}] (5.45,0.75) -- (5.45,-0.15);
+\node[font=\small] at (4.85,-0.75) {s-cis};
+\node[font=\scriptsize,c2] at (4.85,-1.15) {C1 et C4 proches : seule réactive};
+\end{tikzpicture}

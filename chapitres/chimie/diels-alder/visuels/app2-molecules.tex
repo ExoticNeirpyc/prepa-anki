@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+% A : C4H2=C3H-C2≡N1
+\coordinate (a4) at (0,0); \coordinate (a3) at (0.69,0.4); \coordinate (a2) at (1.38,0);
+\draw (a4) -- (a3) -- (a2); \dbl{a4}{a3}{-90}
+\draw (a2) -- ++(-30:0.55) coordinate (n); \draw ($(a2)!0.12cm!90:(n)$) -- ++(-30:0.55); \draw ($(a2)!0.12cm!-90:(n)$) -- ++(-30:0.55);
+\node[anchor=north west,inner sep=1pt] at (n) {N};
+\foreach \i/\p/\a in {4/a4/180,3/a3/90,2/a2/250}{\node[font=\scriptsize,c1] at ($(\p)+(\a:0.25)$) {\i};}
+\node[font=\scriptsize,c1] at ($(n)+(0.45,-0.05)$) {1};
+\node[font=\small] at (0.9,-0.95) {A};
+% B : H2N5-C1H=C2H-C3H=C4H2
+\begin{scope}[xshift=3.4cm]
+\coordinate (b1) at (0.69,0.4); \coordinate (b2) at (1.38,0); \coordinate (b3) at (2.07,0.4); \coordinate (b4) at (2.76,0);
+\draw (b1) -- (b2) -- (b3) -- (b4); \dbl{b1}{b2}{-90} \dbl{b3}{b4}{-90}
+\draw (b1) -- ++(210:0.6) node[anchor=east,inner sep=1pt] (nh) {H$_2$N};
+\foreach \i/\p/\a in {1/b1/90,2/b2/270,3/b3/90,4/b4/0}{\node[font=\scriptsize,c1] at ($(\p)+(\a:0.25)$) {\i};}
+\node[font=\scriptsize,c1] at ($(nh.north)+(0.1,0.12)$) {5};
+\node[font=\small] at (1.4,-0.95) {B};
+\end{scope}
+\end{tikzpicture}

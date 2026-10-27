@@ -1,0 +1,456 @@
+%% paquet: PC::Chimie::O1 Réaction de Diels-Alder
+
+%% carte: definition
+%% source: Cours p. 1
+Qu'est-ce que la réaction de Diels-Alder ?<br>(nature, réactifs, ce qu'elle forme)
+%% verso
+<div class="reponse"><b>Cycloaddition thermique [4+2]</b> entre un <b>diène</b> (4 é \(\pi\)) et un <b>diénophile</b> (2 é \(\pi\)).</div>
+<img src="historique.svg">
+<ul>
+<li>Forme un <b>cycle à 6</b> en une seule étape.</li>
+<li>Crée <span class="c2"><b>2 liaisons \(\sigma_{\mathrm{CC}}\)</b></span>.</li>
+<li>Contrôle la stéréochimie de jusqu'à <b>4 C asymétriques</b>.</li>
+</ul>
+<div class="remarque">Réaction historique : butadiène + éthène, 200 °C, rendement 20 %. Nobel 1950 (Diels, Alder). Seul le modèle des orbitales frontières l'interprète de façon cohérente.</div>
+
+%% carte: s-cis
+%% source: Cours p. 1
+Quelle conformation le diène doit-il adopter pour réagir ? Pourquoi ?
+%% verso
+<div class="reponse">Conformation <b>s-cis</b>, obligatoirement.</div>
+<img src="scis.svg">
+<ul>
+<li>En s-cis, C1 et C4 sont du même côté : les 2 liaisons σ peuvent se former <b>en même temps</b>.</li>
+<li>La s-trans est plus stable, mais l'interconversion est rapide à TA.</li>
+</ul>
+<div class="remarque">Le cours donne « ΔE(s-cis/s-trans) ≈ 30 kJ·mol⁻¹ » : c'est plutôt l'ordre de la barrière de rotation ; l'écart d'énergie s-cis/s-trans du butadiène vaut ≈ 12 kJ·mol⁻¹. Même conclusion : s-trans majoritaire, passage en s-cis facile à TA.</div>
+
+%% carte: dienes-reconnaitre
+<img src="dienes-reco.svg">
+Lesquels de ces diènes peuvent faire une réaction de Diels-Alder ? Justifier.
+%% verso
+<div class="reponse">(a), (b) et (d) : oui. &nbsp; (c) : non.</div>
+<ul>
+<li>(a) cyclopentadiène, (b) : s-cis <b>bloquée</b> dans le cycle → très réactifs.</li>
+<li>(d) : les deux C=C exocycliques sont bloquées en <b>s-cis</b>.</li>
+<li>(c) : bloqué en <b>s-trans</b>, ne peut jamais passer en s-cis.</li>
+</ul>
+<div class="ajout">Exemples d'entraînement ajoutés au cours.</div>
+
+%% carte: conditions
+%% source: Cours p. 1
+Conditions opératoires et qualités pratiques d'une réaction de Diels-Alder ?
+%% verso
+<ul>
+<li>À <b>température ambiante</b> ou en <b>chauffant</b>.</li>
+<li>Solvants <b>apolaires ou peu polaires</b>.</li>
+<li>Rendements souvent <b>excellents</b>, produits d'<b>excellente pureté</b>.</li>
+<li><b>Économie d'atomes de 100 %</b>.</li>
+</ul>
+<div class="ajout">Solvant peu polaire possible : mécanisme concerté, sans intermédiaire chargé à stabiliser.</div>
+
+%% carte: economie-atomes
+%% source: Cours p. 1
+Définir l'économie d'atomes. Que vaut-elle pour une Diels-Alder, et pourquoi ?
+%% verso
+<div class="reponse">\[ \mathrm{EA} = \frac{M(\text{produit désiré})}{\sum M(\text{réactifs})} \]</div>
+<p>Diels-Alder : <b>EA = 100 %</b>.</p>
+<p>C'est une addition : tous les atomes des réactifs se retrouvent dans le produit, aucun sous-produit → très intéressant en chimie verte.</p>
+
+%% carte: retro-thermo
+%% source: Cours p. 1
+La Diels-Alder est renversable. Le justifier thermodynamiquement, et dire comment provoquer une rétro-Diels-Alder.
+%% verso
+<div class="reponse">Chauffer au-delà de la <b>température d'inversion</b> \(T_i = \dfrac{\Delta_r H^\circ}{\Delta_r S^\circ}\).</div>
+<ol class="etapes">
+<li>\(\Delta_r H^\circ \lt 0\) : exothermique (création de 2 liaisons CC de type σ, plus fortes que les 2 π rompues).</li>
+<li>\(\Delta_r S^\circ \lt 0\) : 2 molécules → 1.</li>
+<li>\(\Delta_r G^\circ = \Delta_r H^\circ - T\Delta_r S^\circ\) : négatif à basse \(T\), <b>positif pour \(T \gt T_i\)</b> → sens rétro favorisé.</li>
+</ol>
+
+%% carte: cyclopentadiene-dimere
+%% source: Cours p. 1
+Le cyclopentadiène ne se conserve pas sous forme monomère. Pourquoi ? Comment l'obtenir avant de l'utiliser ?
+%% verso
+<div class="reponse">Il se <b>dimérise à TA</b> par Diels-Alder sur lui-même.<br>Avant usage : <b>rétro-Diels-Alder par chauffage (140 °C) + distillation</b> du monomère, plus volatil que le dimère.</div>
+<img src="dimere.png">
+<div class="remarque">Conformation s-cis bloquée → diène très réactif, qui joue ici aussi le rôle de diénophile.</div>
+
+%% carte: mecanisme-fleches
+%% source: Cours p. 1
+Écrire le mécanisme de la réaction butadiène + éthène : déplacements de doublets et complexe activé.
+%% verso
+<img src="mecanisme.svg">
+<p>Une seule étape : les 3 déplacements de doublets sont <b>simultanés</b>, via un complexe activé à 6 centres :</p>
+<img src="complexe-active.svg">
+
+%% carte: mecanisme-caracteristiques
+%% source: Cours p. 1-2
+Caractériser le mécanisme de la Diels-Alder : étapes, intermédiaires, géométrie d'approche. Que signifie « supra/supra » ?
+%% verso
+<div class="reponse"><b>Concerté</b> : une seule étape, complexe activé à 6 centres.<br>Ni carbocation, ni carbanion : <b>aucun IR</b>.</div>
+<ul>
+<li>Approche dans <b>deux plans parallèles</b>, l'un au-dessus de l'autre → recouvrement de type <b>σ</b> pour les nouvelles liaisons.</li>
+<li><b>Supra par rapport au diène et supra par rapport au diénophile</b> : les 2 nouvelles liaisons σ se forment du <b>même côté</b> du plan de chaque réactif.</li>
+<li>Réaction sous <b>contrôle frontalier</b> (contrôle cinétique).</li>
+</ul>
+
+%% carte: om-butadiene
+%% source: Cours p. 2
+Tracer le diagramme des OM π de l'éthène et du buta-1,3-diène : énergies, remplissage, HO et BV. Quel est le signe de α et β ?
+%% verso
+<div class="cote"><img src="om-ethene.svg"><img src="om-butadiene.svg"></div>
+<ul>
+<li><b>\(\alpha\) et \(\beta\) sont négatifs</b> : plus le coefficient de β est grand, plus le niveau est <b>bas</b>.</li>
+<li>Éthène : 2 é π → <b>HO \(= \alpha+\beta\)</b>, <b>BV \(= \alpha-\beta\)</b> (coefficients 0,71).</li>
+<li>Butadiène : 4 é π délocalisés → <b>HO \(= \alpha+0{,}62\beta\)</b>, <b>BV \(= \alpha-0{,}62\beta\)</b> (coefficients 0,37 et 0,60).</li>
+</ul>
+
+%% carte: symetrie-42-22
+%% source: Cours p. 2
+Justifier par les orbitales frontières que la cycloaddition thermique [4+2] est permise et la [2+2] interdite.
+%% verso
+<div class="cote"><img src="symetrie-42.svg"><img src="symetrie-22.svg"></div>
+<ol class="etapes">
+<li>En thermique, l'interaction se fait entre la <b>HO</b> d'un réactif et la <b>BV</b> de l'autre.</li>
+<li>Former les 2 liaisons σ en même temps exige un recouvrement <b>en phase aux deux extrémités</b>.</li>
+<li>[4+2] : HO diène / BV diénophile en phase aux deux bouts → <span class="c3"><b>permise</b></span>.</li>
+<li>[2+2] : en phase à un bout, en opposition à l'autre → recouvrement total nul → <span class="c2"><b>interdite</b></span>.</li>
+</ol>
+<div class="ajout">Le cours dit seulement « interdite pour des raisons de symétrie » : voici le détail.</div>
+
+%% carte: rendement-historique
+%% source: Cours p. 2
+Pourquoi la réaction historique (butadiène + éthène) a-t-elle un très mauvais rendement ? Raisonner sur les orbitales frontières.
+%% verso
+<div class="reponse">La <b>dimérisation du diène</b> a un écart HO/BV plus petit : elle est plus favorable et concurrence la réaction.</div>
+<img src="ifp-historique.svg">
+<ol class="etapes">
+<li>Butadiène + éthène :<br>\((\alpha-\beta)-(\alpha+0{,}62\beta) = 1{,}62|\beta|\)<br>\((\alpha-0{,}62\beta)-(\alpha+\beta) = 1{,}62|\beta|\)<br>→ <b>2 IFP de même ΔE</b>.</li>
+<li>Butadiène + butadiène :<br>\((\alpha-0{,}62\beta)-(\alpha+0{,}62\beta) = 1{,}24|\beta|\)<br>plus petit que \(1{,}62|\beta|\).</li>
+</ol>
+<div class="remarque">D'où l'intérêt de la règle d'Alder.</div>
+
+%% carte: regle-alder
+%% source: Cours p. 3
+Énoncer la règle d'Alder et l'interpréter avec les orbitales frontières.
+%% verso
+<div class="reponse">La vitesse augmente si le <b>diène est enrichi en électrons</b> (groupes donneurs) et le <b>diénophile appauvri en électrons</b> (groupes attracteurs).</div>
+<ol class="etapes">
+<li>Donneur sur le diène → sa <b>HO monte</b>.</li>
+<li>Attracteur sur le diénophile → sa <b>BV descend</b>.</li>
+<li>ΔE(HO<sub>diène</sub>/BV<sub>diénophile</sub>) diminue → réaction plus rapide.</li>
+</ol>
+<p>C'est une Diels-Alder à <b>demande électronique normale</b> : IFP = HO<sub>diène</sub>/BV<sub>diénophile</sub>.</p>
+
+%% carte: demandes
+%% source: Cours p. 3
+Diels-Alder à demande électronique normale, à demande inverse : définir. Que faut-il toujours faire en premier ?
+%% verso
+<div class="cote"><img src="demandes-normale.svg"><img src="demandes-inverse.svg"></div>
+<ul>
+<li><b>Normale</b> (cas courant) : IFP = HO<sub>diène</sub> / BV<sub>diénophile</sub>.</li>
+<li><b>Inverse</b> (plus rare) : IFP = HO<sub>diénophile</sub> / BV<sub>diène</sub>.</li>
+</ul>
+<div class="attention">Toujours déterminer d'abord l'<b>IFP</b> : celle de plus petit écart énergétique, en comparant les deux écarts.</div>
+
+%% carte: cpd-anhydride-facile
+%% source: Cours p. 3
+<img src="cpd-anhydride-reactifs.png">
+Cette réaction est très facile (très bon rendement à 20 °C). Expliquer pourquoi.
+%% verso
+<ul>
+<li><b>Diène</b> : conformation s-cis <b>bloquée</b>, et groupe <b>alkyle donneur</b> (par hyperconjugaison) → HO haute.</li>
+<li><b>Diénophile</b> : deux C=O <b>attracteurs</b> (effet −M) → BV basse.</li>
+<li>→ ΔE(HO<sub>diène</sub>/BV<sub>diénophile</sub>) faible : règle d'Alder pleinement satisfaite.</li>
+</ul>
+
+%% carte: catalyse-lewis
+%% source: Cours p. 3
+Comment catalyser une Diels-Alder dont le diénophile porte un C=O ? Écrire l'activation et expliquer son effet.
+%% verso
+<div class="reponse">Par un <b>acide de Lewis</b>, type AlCl₃.</div>
+<img src="lewis.svg">
+<ol class="etapes">
+<li>Le O du carbonyle (base de Lewis) cède un doublet à la lacune de Al → <b>adduit de Lewis</b>.</li>
+<li>Le groupe devient encore plus attracteur → <b>BV du diénophile abaissée</b>.</li>
+<li>ΔE(HO<sub>diène</sub>/BV<sub>diénophile</sub>) diminue → réaction plus rapide.</li>
+</ol>
+
+%% carte: fukui-methode
+%% source: Cours p. 3
+Méthode pour prévoir le régioisomère majoritaire sous contrôle orbitalaire (théorème de Fukui) ?
+%% verso
+<ol class="etapes">
+<li><b>Déterminer l'IFP</b> : l'interaction HO/BV de plus petit écart (comparer les deux ; en général HO<sub>diène</sub>/BV<sub>diénophile</sub>, à vérifier).</li>
+<li><b>Recouvrement maximal (S<sub>max</sub>)</b> : sur les deux orbitales de l'IFP, l'extrémité de plus gros coefficient du diène se lie à celle de plus gros coefficient du diénophile : « gros lobe – gros lobe ».</li>
+<li>Les deux autres extrémités se lient → écrire le produit.</li>
+</ol>
+<div class="remarque">Le complexe activé est dissymétrique : la liaison σ entre les gros lobes y est davantage formée.</div>
+<div class="attention">Coefficients comparés en <b>valeur absolue</b>, et seulement sur les atomes qui se lient (les extrémités).</div>
+
+%% carte: regio-diene-1
+%% source: Cours p. 4
+<img src="regio1-recto.svg">
+Produit majoritaire ? (D : groupe donneur, A : groupe attracteur)
+%% verso
+<div class="reponse">Diène 1-substitué → produit <b>« ortho »</b> majoritaire.</div>
+<img src="regio1-verso.svg">
+<div class="remarque">Règle « ortho-para ». Pas de contrôle stérique.</div>
+
+%% carte: regio-diene-2
+%% source: Cours p. 4
+<img src="regio2-recto.svg">
+Produit majoritaire ? (D : groupe donneur, A : groupe attracteur)
+%% verso
+<div class="reponse">Diène 2-substitué → produit <b>« para »</b> majoritaire.</div>
+<img src="regio2-verso.svg">
+<div class="remarque">Règle « ortho-para ». Pas de contrôle stérique.</div>
+
+%% carte: regio-charges-1
+%% source: Cours p. 4
+Sans tableau d'OM, prévoir le régioisomère majoritaire de MeO–CH=CH–CH=CH₂ + CH₂=CH–CHO (contrôle de charges).
+%% verso
+<div class="cote"><img src="meso1-diene.svg"><img src="meso1-acro.svg"></div>
+<ol class="etapes">
+<li>Écrire les <b>formes mésomères faisant apparaître les charges</b>.</li>
+<li>Diène : <span class="c2">C4 porte la charge −</span>. Diénophile : <span class="c3">Cβ porte la charge +</span>.</li>
+<li>C4 (δ−) se lie à Cβ (δ+), donc C1 (porteur de OMe) se lie à Cα (porteur de CHO).</li>
+</ol>
+<div class="reponse">OMe et CHO sur deux C voisins : produit <b>« ortho »</b>.</div>
+<div class="remarque">En général, le contrôle de charges donne le même résultat que le contrôle orbitalaire.</div>
+
+%% carte: regio-charges-2
+%% source: Cours p. 4
+Contrôle de charges : où apparaît la charge − sur CH₂=C(OMe)–CH=CH₂ ? Quel régioisomère en déduire avec CH₂=CH–CHO ?
+%% verso
+<img src="meso2.svg">
+<ol class="etapes">
+<li>Le doublet de O se délocalise : <span class="c2">C1 porte la charge −</span>.</li>
+<li>C1 (δ−) se lie au Cβ (δ+) du diénophile, donc C4 se lie au Cα porteur de CHO.</li>
+</ol>
+<div class="reponse">OMe et CHO en 1,4 : produit <b>« para »</b>.</div>
+
+%% carte: application-1
+%% source: Cours p. 4
+<img src="app1-molecules.svg">
+<table style="font-size:0.72em;text-align:center">
+<tr><th></th><th>Diène<br>HO</th><th>Diène<br>BV</th><th>Diénophile<br>HO</th><th>Diénophile<br>BV</th></tr>
+<tr><th>Énergie</th><td>α+0,55β</td><td>α−0,64β</td><td>α+0,99β</td><td>α−0,44β</td></tr>
+<tr><th>C1</th><td>−0,51</td><td>−0,62</td><td>−0,57</td><td>0,66</td></tr>
+<tr><th>C2</th><td>−0,28</td><td>0,40</td><td>−0,57</td><td>−0,29</td></tr>
+<tr><th>C3</th><td>0,36</td><td>0,36</td><td>0,01</td><td>−0,53</td></tr>
+<tr><th>C4</th><td>0,65</td><td>−0,56</td><td>0,59</td><td>0,40</td></tr>
+<tr><th>C5</th><td>−0,27</td><td>−0,10</td><td>−0,07</td><td>0,17</td></tr>
+<tr><th>C6</th><td>0,19</td><td>0,04</td><td>0,07</td><td>−0,07</td></tr>
+</table>
+Application 1 (\(\alpha\) et \(\beta\) négatifs) : prévoir le produit majoritaire.
+%% verso
+<div class="reponse">Produit <b>« para »</b>.</div>
+<img src="app1-produit.svg">
+<ol class="etapes pas-a-pas">
+<li><b>IFP.</b> HO<sub>diène</sub>/BV<sub>diénophile</sub> :<br>\((\alpha-0{,}44\beta)-(\alpha+0{,}55\beta) = 0{,}99|\beta|\)<br>HO<sub>diénophile</sub>/BV<sub>diène</sub> :<br>\((\alpha-0{,}64\beta)-(\alpha+0{,}99\beta) = 1{,}63|\beta|\)<br>→ IFP = HO<sub>diène</sub>/BV<sub>diénophile</sub> (demande normale : OEt +M, ester −M).</li>
+<li><b>S<sub>max</sub>.</b> HO diène : \(|c_1| = 0{,}51\), \(|c_4| = 0{,}65\) → <b>C4</b>.<br>BV diénophile : \(|c_1| = 0{,}66\), \(|c_2| = 0{,}29\) → <b>C1</b>.</li>
+<li><b>Produit.</b> C4–C1' et C1–C2' : OEt et COOMe en 1,4 → « para ».</li>
+</ol>
+<div class="remarque">Recouvrement total :<br>\(S_{\text{para}} = c_4c_{1'} + c_1c_{2'}\)<br>\(= 0{,}65 \times 0{,}66 + (-0{,}51)(-0{,}29)\)<br>\(= 0{,}577\)<br>\(S_{\text{méta}} = c_4c_{2'} + c_1c_{1'}\)<br>\(= 0{,}65 \times (-0{,}29) + (-0{,}51) \times 0{,}66\)<br>\(= -0{,}525\)<br>En valeur absolue, para l'emporte.</div>
+<div class="attention">Le cours écrit \(S_{\text{méta}} = -0{,}515\) : coquille, le calcul donne \(-0{,}525\). Conclusion inchangée.</div>
+
+%% carte: application-2
+%% source: Cours p. 5
+<img src="app2-molecules.svg">
+<table style="font-size:0.74em;text-align:center">
+<tr><th>A</th><th>OM 1</th><th>OM 2</th><th>OM 3</th><th>OM 4</th></tr>
+<tr><th>Énergie</th><td>−1,71</td><td>−0,81</td><td>0,46</td><td>1,57</td></tr>
+<tr><th>Atome 1</th><td>0,50</td><td>0,63</td><td>0,52</td><td>0,29</td></tr>
+<tr><th>Atome 2</th><td>0,60</td><td>0,20</td><td>−0,50</td><td>−0,59</td></tr>
+<tr><th>Atome 3</th><td>0,54</td><td>−0,47</td><td>−0,29</td><td>0,64</td></tr>
+<tr><th>Atome 4</th><td>0,31</td><td>−0,58</td><td>0,63</td><td>−0,41</td></tr>
+</table>
+<table style="font-size:0.74em;text-align:center">
+<tr><th>B</th><th>OM 1</th><th>OM 2</th><th>OM 3</th><th>OM 4</th><th>OM 5</th></tr>
+<tr><th>Énergie</th><td>−2,01</td><td>−1,44</td><td>−0,44</td><td>0,73</td><td>1,65</td></tr>
+<tr><th>Atome 1</th><td>0,48</td><td>0,04</td><td>0,47</td><td>0,61</td><td>0,42</td></tr>
+<tr><th>Atome 2</th><td>0,36</td><td>0,45</td><td>0,48</td><td>−0,27</td><td>−0,60</td></tr>
+<tr><th>Atome 3</th><td>0,24</td><td>0,61</td><td>−0,26</td><td>−0,42</td><td>0,58</td></tr>
+<tr><th>Atome 4</th><td>0,12</td><td>0,42</td><td>−0,60</td><td>0,57</td><td>−0,35</td></tr>
+<tr><th>Atome 5</th><td>0,76</td><td>−0,49</td><td>−0,35</td><td>−0,22</td><td>−0,11</td></tr>
+</table>
+Application 2 : A = CH₂=CH–CN (4 é π), B = H₂N–CH=CH–CH=CH₂ (6 é π). Énergies relatives adimensionnées. Donner le produit majoritaire.
+%% verso
+<div class="reponse">Produit <b>« ortho »</b> : NH₂ et CN sur deux C voisins.</div>
+<img src="app2-produit.svg">
+<ol class="etapes pas-a-pas">
+<li><b>HO et BV.</b> A : 4 é π → OM1 et OM2 remplies : HO = OM2 (−0,81), BV = OM3 (0,46).<br>B : 6 é π (2 C=C + doublet de N) → HO = OM3 (−0,44), BV = OM4 (0,73).</li>
+<li><b>IFP.</b> HO<sub>B</sub>/BV<sub>A</sub> : 0,46 − (−0,44) = 0,90. &nbsp; HO<sub>A</sub>/BV<sub>B</sub> : 0,73 − (−0,81) = 1,54.<br>→ IFP = HO<sub>B</sub>/BV<sub>A</sub> : B est le diène (NH₂, +M), A le diénophile (CN, −M).</li>
+<li><b>S<sub>max</sub>.</b> HO<sub>B</sub> : \(|c_1| = 0{,}47\), \(|c_4| = 0{,}60\) → <b>C4</b>.<br>BV<sub>A</sub> : \(|c_3| = 0{,}29\), \(|c_4| = 0{,}63\) → <b>C4</b>.</li>
+<li><b>Produit.</b> C4(B)–C4(A) et C1(B)–C3(A) : NH₂ et CN voisins → « ortho ».</li>
+</ol>
+<div class="attention">Ici les énergies sont données directement (négatif = bas) : la HO est la plus haute OM remplie. Seuls les coefficients des extrémités comptent.</div>
+
+%% carte: hetero-diels-alder
+%% source: Cours p. 5
+Qu'est-ce qu'une hétéro-Diels-Alder ? Quelle attitude adopter en exercice ?
+%% verso
+<div class="reponse">Une Diels-Alder où une nouvelle liaison met en jeu un autre atome que le carbone (<b>N, O ou S</b>).</div>
+<p>Ne <b>jamais</b> proposer ces produits en première intention, mais savoir que c'est possible. L'analyse orbitalaire confirme le produit observé.</p>
+<img src="hetero.svg">
+<div class="ajout">Exemple : butadiène + méthanal.</div>
+
+%% carte: alcynes
+%% source: Cours p. 5
+Un alcyne peut-il jouer le rôle de diénophile ? Comparer à un alcène, et donner le produit avec le butadiène.
+%% verso
+<div class="reponse">Oui, mais il réagit en général <b>plus lentement</b> qu'un alcène.</div>
+<img src="alcyne.svg">
+<p>La seconde liaison π de l'alcyne est conservée : on obtient un cyclohexa-1,4-diène.</p>
+<div class="attention">Le cours invoque « une HO plus basse ». En demande normale, c'est la <b>BV</b> du diénophile qui compte : celle d'un alcyne est plus haute que celle d'un alcène → écart HO<sub>diène</sub>/BV<sub>diénophile</sub> plus grand → plus lent.</div>
+
+%% carte: stereo-denombrement
+%% source: Cours p. 6
+Dans le cas le plus général, combien de stéréoisomères de configuration une Diels-Alder pourrait-elle donner ? Combien sont formés, et pourquoi ?
+%% verso
+<div class="reponse">4 C stéréogènes → \(2^4 = 16\) envisageables, mais <b>seuls 4 sont formés</b>.</div>
+<ul>
+<li>Mécanisme concerté, approche en plans parallèles → les stéréochimies du diène et du diénophile sont <b>conservées</b>.</li>
+<li><b>2 couples d'énantiomères</b> : approche <b>EXO</b> (par l'extérieur) ou <b>ENDO</b> (par l'intérieur), chacune par le dessus ou le dessous du plan du diène.</li>
+</ul>
+
+%% carte: stereo-enonce
+%% source: Cours p. 6
+Énoncer la stéréospécificité de la réaction de Diels-Alder et dire ce qu'elle implique.
+%% verso
+<div class="reponse">Diastéréospécifique <b>SYN par rapport au diène <u>et</u> par rapport au diénophile</b>.</div>
+<ul>
+<li>Diénophile : deux substituants cis restent <b>cis</b>, trans restent <b>trans</b>.</li>
+<li>Diène (E,E) : ses deux substituants « outside » se retrouvent <b>cis</b> ; diène (E,Z) : <b>trans</b>.</li>
+</ul>
+
+%% carte: stereo-dienophile-cis
+%% source: Cours p. 6
+<img src="stereo-cis-recto.svg">
+Dessiner tous les stéréoisomères formés.
+%% verso
+<div class="cote"><img src="stereo-cis-verso1.svg"><img src="stereo-cis-verso2.svg"></div>
+<ul>
+<li>A et B (diène E,E) → <b>cis</b>. C et D (diénophile cis) → <b>cis</b>.</li>
+<li><b>2 couples d'énantiomères</b> : ENDO (A, B, C et D du même côté) et EXO.</li>
+</ul>
+
+%% carte: stereo-dienophile-trans
+%% source: Cours p. 6
+<img src="stereo-trans-recto.svg">
+Dessiner tous les stéréoisomères formés.
+%% verso
+<div class="cote"><img src="stereo-trans-verso1.svg"><img src="stereo-trans-verso2.svg"></div>
+<ul>
+<li>A et B → <b>cis</b>. C et D → <b>trans</b> (stéréochimie du diénophile conservée).</li>
+<li><b>2 couples d'énantiomères</b>, selon que C ou D est en position endo.</li>
+</ul>
+<div class="remarque">Exemple laissé sans réponse dans le cours.</div>
+
+%% carte: application-3a
+%% source: Cours p. 6
+<img src="app3a-recto.svg">
+Application 3 : dessiner les produits.
+%% verso
+<img src="app3a-verso.svg">
+<ul>
+<li>Diénophile cis → COOMe et Ph <b>cis</b>.</li>
+<li>2 C stéréogènes → <b>un couple d'énantiomères</b>, en mélange racémique.</li>
+</ul>
+<div class="remarque">Diène non substitué : les approches endo et exo donnent les mêmes produits.</div>
+
+%% carte: application-3b
+%% source: Cours p. 6
+<img src="app3b-recto.svg">
+Application 3 : dessiner les produits.
+%% verso
+<img src="app3b-verso.svg">
+<ul>
+<li>Diénophile trans → COOMe et Ph <b>trans</b>.</li>
+<li>Un couple d'énantiomères, en mélange racémique.</li>
+</ul>
+
+%% carte: tcne
+%% source: Cours p. 7
+<img src="tcne.svg">
+Pourquoi le tétracyanoéthylène est-il un excellent diénophile ?
+%% verso
+<p>Le groupe nitrile –C≡N associe :</p>
+<ul>
+<li>un <b>fort pouvoir électroattracteur</b> → BV très basse (règle d'Alder) ;</li>
+<li>un <b>très faible encombrement stérique</b> (groupe linéaire).</li>
+</ul>
+
+%% carte: tcne-EE
+%% source: Cours p. 7
+<img src="tcne-EE-recto.svg">
+Diène (2E,4E) + tétracyanoéthylène : dessiner le(s) produit(s) et les caractériser.
+%% verso
+<img src="tcne-EE-verso.svg">
+<ul>
+<li>Les deux CH₃ « outside » (diène E,E) → <b>cis</b>.</li>
+<li>Plan de symétrie → <b>méso</b> : une seule molécule.</li>
+</ul>
+
+%% carte: tcne-EZ
+%% source: Cours p. 7
+<img src="tcne-EZ-recto.svg">
+Diène (2E,4Z) + tétracyanoéthylène : dessiner le(s) produit(s) et les caractériser.
+%% verso
+<img src="tcne-EZ-verso.svg">
+<ul>
+<li>Un CH₃ « outside », un « inside » → <b>trans</b>.</li>
+<li>Molécule chirale : <b>couple d'énantiomères</b>, en mélange racémique.</li>
+</ul>
+<div class="ajout">Le CH₃ « inside » gêne la conformation s-cis : ce diène réagit plus lentement.</div>
+
+%% carte: cpd-anhydride-stereo
+%% source: Cours p. 7-8
+<img src="cpd-anhydride-reactifs.png">
+Combien de stéréoisomères obtient-on ? Les dessiner et les caractériser.
+%% verso
+<div class="reponse"><b>2</b> stéréoisomères : endo et exo, tous deux <b>méso</b>.</div>
+<div class="cote"><div><img src="endo-produit.png" style="max-width:210px"><p style="text-align:center">endo (majoritaire)</p></div><div><img src="exo-produit.png" style="max-width:210px"><p style="text-align:center">exo</p></div></div>
+<p>Chacun possède un plan de symétrie : une seule molécule par approche, au lieu d'un couple d'énantiomères.</p>
+
+%% carte: regle-endo
+%% source: Cours p. 8 (hors programme)
+Règle ENDO : énoncé et interprétation. Quel produit est favorisé sous contrôle thermodynamique ?
+%% verso
+<div class="reponse">Sous <b>contrôle orbitalaire</b> (cinétique), l'approche <b>ENDO</b> est favorisée : elle fait apparaître des <b>interactions frontalières secondaires favorables</b>.</div>
+<img src="om-endo-exo.png">
+<ul>
+<li>Traits pleins : interactions principales (formation des σ). Pointillés : interactions secondaires, possibles seulement en endo.</li>
+<li>Sous <b>contrôle thermodynamique</b> : produit <b>EXO</b> favorisé, plus stable (moins de gêne stérique avec les ponts).</li>
+<li>N'a de sens que si le diène ou le diénophile est substitué.</li>
+</ul>
+<div class="attention">La règle endo est une <b>stéréosélectivité</b> (préférence entre produits possibles), à ne pas confondre avec la <b>stéréospécificité</b> syn/syn.</div>
+
+%% carte: endo-exo-reconnaitre
+%% source: Cours p. 8
+Sur un adduit bicyclique issu du cyclopentadiène, comment distinguer un substituant endo d'un substituant exo ?
+%% verso
+<div class="reponse"><b>Exo</b> : du côté du <b>pont le plus court</b> (CH₂).<br><b>Endo</b> : tourné vers le pont le plus long (côté C=C), sous le bicycle.</div>
+<img src="endo-exo-schema.png">
+
+%% carte: outside-endo
+%% source: Cours p. 8
+Diène portant des substituants « outside » (o) et « inside » (i) + diénophile substitué : dans le produit, quels substituants se retrouvent du même côté ?
+%% verso
+<div class="reponse">Les substituants <b>outside</b> du diène sont <b>cis</b> aux substituants <b>endo</b> du diénophile ; inside et exo sont cis entre eux.</div>
+<img src="outside-inside.png">
+
+%% carte: retrosynthese
+<img src="retro-recto.svg">
+Proposer un diène et un diénophile permettant de synthétiser cette molécule par Diels-Alder.
+%% verso
+<img src="retro-verso.svg">
+<ol class="etapes">
+<li>La C=C du cycle était la liaison centrale (C2–C3) du diène.</li>
+<li>Couper les deux liaisons σ du cycle opposées à cette C=C.</li>
+<li>Les 4 C autour de la C=C forment le <b>diène</b> (isoprène), les 2 restants le <b>diénophile</b> (acroléine).</li>
+<li>Vérifier la régiosélectivité : diène 2-substitué → « para », c'est bien le motif de la cible.</li>
+</ol>
+<div class="ajout">Exercice classique des concours, absent du cours.</div>

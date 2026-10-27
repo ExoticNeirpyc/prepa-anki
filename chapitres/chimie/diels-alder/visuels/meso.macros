@@ -1,0 +1,4 @@
+% Chaînes en zigzag pour les formes mésomères. \zz{p}{(x,y)}{n} : points p1…pn, pas 0,7 cm.
+\newcommand{\zz}[4][0]{\foreach \i in {1,...,#4}{\pgfmathsetmacro{\yy}{mod(\i+#1,2)*0.4}
+  \coordinate (#2\i) at ($#3+(0.69*\i-0.69,\yy)$);}}
+\newcommand{\fl}[3]{\draw[c2,-{Stealth},line width=0.8pt] #1 .. controls #2 .. #3;}

@@ -1,0 +1,12 @@
+\input{da.macros}
+\begin{tikzpicture}[yscale=1.25]
+\draw[-{Stealth}] (-1.6,-2.3) -- (-1.6,2.3) node[above]{$E$};
+% éthène
+\foreach \y/\ca/\cb/\occ/\nom/\en in {-1/0.71/0.71/1/HO/{\alpha+\beta}, 1/0.71/-0.71/0/BV/{\alpha-\beta}}{
+  \draw[line width=1pt] (-0.5,\y) -- (0.1,\y);
+  \lobe{(0.45,\y)}{\ca}{0.7} \lobe{(0.9,\y)}{\cb}{0.7}
+  \node[font=\scriptsize,anchor=east] at (-0.55,\y) {$\en$};
+  \node[font=\scriptsize,c2] at (1.4,\y) {\nom};
+  \ifnum\occ=1 \node at (-0.2,\y) {$\uparrow\!\downarrow$}; \fi}
+\node[font=\small] at (0.3,-2.55) {éthène};
+\end{tikzpicture}

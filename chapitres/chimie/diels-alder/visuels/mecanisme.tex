@@ -1,0 +1,9 @@
+\input{da.macros}
+\begin{tikzpicture}
+\reactifs{r}{(0,0)}
+\draw[c2,-{Stealth},line width=0.9pt] ($(r1)!0.5!(r2)$) .. controls +(160:0.5) and +(150:0.4) .. ($(r2)!0.5!(r3)$);
+\draw[c2,-{Stealth},line width=0.9pt] ($(r3)!0.5!(r4)$) .. controls +(250:0.45) and +(240:0.5) .. ($(r4)!0.5!(r5)$);
+\draw[c2,-{Stealth},line width=0.9pt] ($(r5)!0.5!(r6)$) .. controls +(0:0.55) and +(40:0.55) .. ($(r6)!0.5!(r1)$);
+\draw[-{Stealth}] (2.0,0) -- (3.2,0) node[midway,above]{$\Delta$};
+\cyclohexene{p}{(4.4,0)}{}
+\end{tikzpicture}

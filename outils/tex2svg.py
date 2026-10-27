@@ -4,6 +4,8 @@
 Un fichier .tex peut contenir un document complet (\\documentclass…) ou seulement le
 dessin : il est alors placé dans un document « standalone » avec les paquets usuels
 (voir PREAMBULE). Une ligne « % preambule: … » ajoute du préambule au cas par cas.
+Un fichier placé à côté de la source peut être inclus avec \\input{nom} (macros communes
+à plusieurs visuels d'un même chapitre, par exemple).
 
 Par défaut, chapitres/…/visuels/nom.tex produit chapitres/…/media/nom.svg.
 
@@ -13,6 +15,7 @@ Exemples :
 """
 
 import argparse
+import os
 import re
 import shutil
 import subprocess
@@ -41,6 +44,16 @@ PREAMBULE = r"""\documentclass[border=3pt,varwidth=false]{standalone}
 \definecolor{c2}{HTML}{C0392B}
 \definecolor{c3}{HTML}{1E8449}
 \definecolor{c4}{HTML}{7D3C98}
+% Dessin de molécules en TikZ (formules topologiques) :
+%   \coin{A}{B}       liaison en coin plein de A (étroit) vers B (large)
+%   \hach{A}{B}       liaison hachurée de A vers B
+%   \dbl{A}{B}{90}    trait intérieur d'une double liaison A–B, décalé du côté +90° (ou -90)
+\tikzset{every picture/.append style={line cap=round, line join=round, line width=0.75pt}}
+\newcommand{\coin}[2]{\fill let \p1=($(#2)-(#1)$), \n1={atan2(\y1,\x1)} in
+  (#1) -- ($(#2)+(\n1+90:0.075)$) -- ($(#2)+(\n1-90:0.075)$) -- cycle;}
+\newcommand{\hach}[2]{\foreach \t in {0.14,0.28,...,1.0}{\draw[line width=0.55pt] let \p1=($(#2)-(#1)$),
+  \n1={atan2(\y1,\x1)} in ($(#1)!\t!(#2)+(\n1+90:0.075*\t)$) -- ($(#1)!\t!(#2)+(\n1-90:0.075*\t)$);}}
+\newcommand{\dbl}[3]{\draw ($($(#1)!0.17!(#2)$)!0.11cm!#3:(#2)$) -- ($($(#2)!0.17!(#1)$)!0.11cm!-#3:(#1)$);}
 """
 
 
@@ -68,7 +81,8 @@ def compiler(tex, sortie, echelle, moteur):
         passes = 2 if re.search(r"chemmove|remember picture", tex.read_text(encoding="utf-8")) else 1
         for _ in range(passes):
             r = subprocess.run([moteur, "-interaction=nonstopmode", "-halt-on-error", "v.tex"],
-                               cwd=tmp, capture_output=True, text=True)
+                               cwd=tmp, capture_output=True, text=True,
+                               env={**os.environ, "TEXINPUTS": f"{tex.resolve().parent}:"})
             if r.returncode != 0:
                 break
         if r.returncode != 0:

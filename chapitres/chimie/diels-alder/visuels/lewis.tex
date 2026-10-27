@@ -1,0 +1,26 @@
+\input{da.macros}
+\newcommand{\Odbl}{$|\mathrm{O}|$}
+\begin{tikzpicture}
+\foreach \i/\a in {o/0,c1/72,c2/144,c3/216,c4/288}{\coordinate (\i) at (\a:0.7);}
+\draw (o) -- (c1) -- (c2) -- (c3) -- (c4) -- (o); \dbl{c2}{c3}{90}
+\fill[white] (o) circle (0.17); \node at (o) {$\overline{\underline{\mathrm{O}}}$};
+\draw ($(c1)+(-0.05,0)$) -- ++(72:0.55) ($(c1)+(0.06,-0.03)$) -- ++(72:0.55);
+\node[anchor=south,inner sep=1pt] (oh) at ($(c1)+(72:0.6)$) {$|\mathrm{O}|$};
+\draw ($(c4)+(-0.05,0)$) -- ++(-72:0.55) ($(c4)+(0.06,0.03)$) -- ++(-72:0.55);
+\node[anchor=north,inner sep=1pt] at ($(c4)+(-72:0.6)$) {$|\mathrm{O}|$};
+\node at (1.55,0) {$+$};
+\node (al) at (2.65,0.0) {$\square\,\mathrm{AlCl_3}$};
+\draw[c2,-{Stealth},line width=0.9pt] ($(oh.east)+(-0.02,0.05)$) .. controls +(30:0.9) and +(100:0.8) .. ($(al.north)+(-0.25,0.02)$);
+\draw[-{Stealth[harpoon]}] (3.55,0.08) -- (4.6,0.08); \draw[-{Stealth[harpoon]}] (4.6,-0.08) -- (3.55,-0.08);
+\node[font=\scriptsize,align=center] at (4.08,-0.45) {acide/base\\de Lewis};
+\begin{scope}[xshift=5.6cm]
+\foreach \i/\a in {o/0,c1/72,c2/144,c3/216,c4/288}{\coordinate (q\i) at (\a:0.7);}
+\draw (qo) -- (qc1) -- (qc2) -- (qc3) -- (qc4) -- (qo); \dbl{qc2}{qc3}{90}
+\fill[white] (qo) circle (0.17); \node at (qo) {$\overline{\underline{\mathrm{O}}}$};
+\draw ($(qc1)+(-0.05,0)$) -- ++(72:0.55) ($(qc1)+(0.06,-0.03)$) -- ++(72:0.55);
+\node[anchor=south,inner sep=1pt] at ($(qc1)+(72:0.6)$) {$|\mathrm{O}^{\oplus}\!\!-\mathrm{\overset{\ominus}{Al}Cl_3}$};
+\draw ($(qc4)+(-0.05,0)$) -- ++(-72:0.55) ($(qc4)+(0.06,0.03)$) -- ++(-72:0.55);
+\node[anchor=north,inner sep=1pt] at ($(qc4)+(-72:0.6)$) {$|\mathrm{O}|$};
+\node[font=\scriptsize,c1] at (0.6,-1.75) {adduit de Lewis};
+\end{scope}
+\end{tikzpicture}

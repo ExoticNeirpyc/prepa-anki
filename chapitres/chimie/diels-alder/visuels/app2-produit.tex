@@ -1,0 +1,9 @@
+\input{da.macros}
+\begin{tikzpicture}
+\cyclohexene{p}{(0,0)}{c2, line width=1.4pt} \sP{p1}{90}{NH$_2$} \sP{p6}{30}{CN}
+\foreach \i/\t in {1/1B,4/4B,5/4A,6/3A}{\node[font=\scriptsize,c1] at ($(p\i)!0.38!(pc)$) {\t};}
+\node[font=\small,c3,align=center] at (0,-1.6) {« ortho »\\majoritaire};
+\begin{scope}[xshift=4cm,opacity=0.55]
+\cyclohexene{q}{(0,0)}{} \sP{q1}{90}{NH$_2$} \sP{q5}{330}{CN}
+\node[font=\small,align=center] at (0,-1.6) {« méta »\\minoritaire};
+\end{scope}\end{tikzpicture}

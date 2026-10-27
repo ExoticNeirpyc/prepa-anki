@@ -1,0 +1,10 @@
+\input{da.macros}
+\begin{tikzpicture}
+\cyclohexene{p}{(0,0)}{c2, line width=1.4pt} \sP{p2}{150}{} \sP{p5}{330}{CHO}
+\foreach \a/\b in {p4/p5,p6/p1}{\draw[c2,decorate,decoration={zigzag,amplitude=1.5pt,segment length=3pt}]
+  ($($(\a)!0.5!(\b)$)!0.22cm!90:(\b)$) -- ($($(\a)!0.5!(\b)$)!0.22cm!-90:(\b)$);}
+\draw[line width=0.8pt,double distance=2.5pt,-{Implies}] (1.7,0) -- (2.8,0);
+\reactifs[0.45]{r}{(4.3,0)} \sP{r2}{150}{} \sP{r5}{330}{CHO}
+\node at (4.3,0) {$+$};
+\node[font=\scriptsize] at (3.7,-1.45) {isoprène}; \node[font=\scriptsize] at (5.2,-1.45) {acroléine};
+\end{tikzpicture}

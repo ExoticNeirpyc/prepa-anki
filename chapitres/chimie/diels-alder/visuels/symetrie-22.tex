@@ -1,0 +1,12 @@
+\input{da.macros}
+\begin{tikzpicture}
+% [2+2]
+\node[font=\small\bfseries] at (0.8,2.25) {[2+2] : interdite};
+\draw[gray] (0,1.2) -- (1.6,1.2); \node[font=\scriptsize,anchor=west] at (1.85,1.2) {HO alcène};
+\lobe{(0,1.2)}{0.71}{0.7} \lobe{(1.6,1.2)}{0.71}{0.7}
+\draw[gray] (0,-0.5) -- (1.6,-0.5); \node[font=\scriptsize,anchor=west] at (1.85,-0.5) {BV alcène};
+\lobe{(0,-0.5)}{-0.71}{0.7} \lobe{(1.6,-0.5)}{0.71}{0.7}
+\draw[c3,line width=1.2pt,{Stealth}-{Stealth}] (0,0.68) -- (0,0.05);
+\draw[c2,line width=1.2pt,{Stealth}-{Stealth}] (1.6,0.68) -- (1.6,0.05);
+\node[c2,font=\scriptsize,align=center] at (0.8,-1.55) {un bout en phase,\\l'autre en opposition :\\recouvrement total nul};
+\end{tikzpicture}

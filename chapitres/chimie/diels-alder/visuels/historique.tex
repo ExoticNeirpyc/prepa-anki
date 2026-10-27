@@ -1,0 +1,11 @@
+\input{da.macros}
+\begin{tikzpicture}
+\reactifs{r}{(0,0)}
+\foreach \i/\a in {1/90,2/150,3/210,4/270}{\node[font=\scriptsize,c1] at ($(r\i)+(\a:0.3)$) {\i};}
+\foreach \i/\a in {5/330,6/30}{\node[font=\scriptsize,c1] at ($(r\i)+(\a:0.3)$) {\i};}
+\node[font=\small] at (-0.95,-1.35) {diène};
+\node[font=\small] at (1.05,-1.35) {diénophile};
+\draw[-{Stealth}] (2.1,0) -- (3.5,0) node[midway,above]{$\Delta$} node[midway,below,font=\small]{200\,°C};
+\cyclohexene{p}{(4.7,0)}{c2, line width=1.6pt}
+\foreach \i/\a in {1/90,2/150,3/210,4/270,5/330,6/30}{\node[font=\scriptsize,c1] at ($(p\i)+(\a:0.3)$) {\i};}
+\end{tikzpicture}

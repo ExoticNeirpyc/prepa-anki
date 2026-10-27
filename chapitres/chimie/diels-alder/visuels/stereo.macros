@@ -1,0 +1,6 @@
+% \prodst{nom}{(x,y)}{t1}{t4}{t6}{étiq1}{étiq4}{étiq6} : cyclohexène substitué en 1, 4 et 6
+%   (t = C pour un coin, H pour une hachure) ; \cinq{nom}{t5}{étiq5} pour le carbone 5.
+\newcommand{\prodst}[8]{\cyclohexene{#1}{#2}{}
+  \csname s#3\endcsname{#11}{90}{#6} \csname s#4\endcsname{#14}{270}{#7}
+  \csname s#5\endcsname{#16}{30}{#8}}
+\newcommand{\cinq}[3]{\csname s#2\endcsname{#15}{330}{#3}}

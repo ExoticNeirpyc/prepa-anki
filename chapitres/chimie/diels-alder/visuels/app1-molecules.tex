@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+\foreach \i/\x/\y in {1/0/0.4,2/0.69/0,3/1.38/0.4,4/2.07/0}{\coordinate (d\i) at (\x,\y);}
+\draw (d1) -- (d2) -- (d3) -- (d4); \dbl{d1}{d2}{-90} \dbl{d3}{d4}{-90}
+\draw (d3) -- ++(0,0.62) node[anchor=south,inner sep=1pt] (o) {O};
+\draw (o.north east) -- ++(30:0.5) node[anchor=south west,inner sep=1pt] {Et};
+\foreach \i/\a in {1/180,2/270,3/0,4/0}{\node[font=\scriptsize,c1] at ($(d\i)+(\a:0.25)$) {\i};}
+\node[font=\scriptsize,c1] at ($(o)+(-0.3,0)$) {5}; \node[font=\scriptsize,c1] at ($(o)+(0.6,0.75)$) {6};
+\node[font=\small] at (1,-0.7) {diène};
+\begin{scope}[xshift=3.6cm]
+\foreach \i/\x/\y in {1/0/0.4,2/0.69/0,3/1.38/0.4,5/2.07/0,6/2.76/0.4}{\coordinate (e\i) at (\x,\y);}
+\draw (e1) -- (e2) -- (e3); \dbl{e1}{e2}{-90}
+\draw (e3) -- ++(0,0.62) node[anchor=south,inner sep=1pt] (o4) {O};
+\draw ($(e3)+(0.08,0.05)$) -- ++(0,0.5);
+\draw (e3) -- ($(e5)+(-0.12,0.07)$); \node[inner sep=1pt] at (e5) {O}; \draw ($(e5)+(0.12,0.07)$) -- (e6);
+\foreach \i/\a in {1/180,2/270,3/180,6/0}{\node[font=\scriptsize,c1] at ($(e\i)+(\a:0.25)$) {\i};}
+\node[font=\scriptsize,c1] at ($(o4)+(-0.3,0)$) {4}; \node[font=\scriptsize,c1] at ($(e5)+(0,-0.3)$) {5};
+\node[font=\small] at (1.4,-0.7) {diénophile};
+\end{scope}
+\end{tikzpicture}

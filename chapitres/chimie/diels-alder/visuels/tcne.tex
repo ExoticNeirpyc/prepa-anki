@@ -1,0 +1,5 @@
+\begin{tikzpicture}
+\draw (0,0.4) -- (0,-0.4); \draw (0.11,0.27) -- (0.11,-0.27);
+\foreach \y/\s in {0.4/1,-0.4/-1}{\draw (0,\y) -- (-0.5,\y+\s*0.3) node[anchor=east,inner sep=1pt]{NC};
+  \draw (0,\y) -- (0.5,\y+\s*0.3) node[anchor=west,inner sep=1pt]{CN};}
+\end{tikzpicture}
