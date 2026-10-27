@@ -1,0 +1,501 @@
+%% paquet: PC::Physique::MF5 Ondes mécaniques dans les solides
+
+%% carte: onde-progressive
+%% source: Plan p. 1
+Définir une <b>onde progressive</b>. Que transporte-t-elle, et que ne transporte-t-elle pas ?
+%% verso
+<div class="reponse">Phénomène de <b>propagation</b>, à la suite d'une perturbation, d'une grandeur physique appelée <b>vibration</b>.</div>
+<ul>
+<li>Vibration : hauteur d'eau, vitesse, pression, champ électrique ou magnétique, déplacement…</li>
+<li>La propagation se fait <span class="c2"><b>sans transport de matière</b></span> (elle transporte de l'énergie).</li>
+</ul>
+
+%% carte: transversale-longitudinale
+%% source: Plan p. 1 ; cours p. 1
+Définir une onde <b>transversale</b> et une onde <b>longitudinale</b>.<br>Classer : l'onde acoustique dans une tige solide ; l'onde sur une corde vibrante.
+%% verso
+<ul>
+<li><b>Transversale</b> : perturbation <b>perpendiculaire</b> à la direction de propagation.</li>
+<li><b>Longitudinale</b> : perturbation <b>parallèle</b> à la direction de propagation.</li>
+</ul>
+<img src="types-ondes.svg">
+<div class="reponse">Tige solide (son) : <b>longitudinale</b> (atomes déplacés selon \(x\)).<br>Corde vibrante : <b>transversale</b> (points déplacés selon \(y\)).</div>
+
+%% carte: modele-chaine
+%% source: Cours p. 1
+Ondes acoustiques dans une tige solide : décrire le <b>modèle microscopique</b> (constitution du solide, forces, géométrie) et ses notations.
+%% verso
+<ul>
+<li><b>Solide</b> : empilement régulier d'atomes / ions / molécules.</li>
+<li><b>Forces</b> : la force qui rappelle un atome est modélisée par un <b>rappel élastique</b> (ressort de raideur \(k\)), valable si les <b>amplitudes de vibration sont faibles</b>.</li>
+<li><b>Géométrie</b> : les plans d'atomes ⊥ à \(x\) vibrent <b>en phase</b> → problème <b>1D</b> : <b>chaîne infinie d'oscillateurs</b> de masse \(m\), espacés de \(a = \ell_0\) au repos.</li>
+</ul>
+<img src="chaine.svg">
+<ul>
+<li>Position de l'atome \(n\) : \(x_n(t) = x_{n,\text{éq}} + u_n(t)\), avec \(x_{n,\text{éq}} = na\) et \(|u_n| \ll x_{n,\text{éq}}\).</li>
+<li><span class="c2">\(u_n\) est algébrique</span> (positif ou négatif).</li>
+</ul>
+<div class="remarque">« Infinie » : idéalisation ; en réalité la chaîne est finie à cause des amortissements.</div>
+
+%% carte: equation-discrete
+%% source: Cours p. 2
+Chaîne d'atomes (masse \(m\), ressorts de raideur \(k\) et de longueur à vide \(\ell_0 = a\), déplacements \(u_n(t)\)).<br><b>Établir</b> l'équation du mouvement de l'atome \(n\)
+%% verso
+<ol class="etapes pas-a-pas">
+<li><b>PFD</b>, syst. {atome \(n\)}, réf. labo galiléen ; seules forces selon \(x\) : les deux ressorts.<br>\(m\vec a = \vec F_{n+1/n} + \vec F_{n-1/n}\), avec \(\vec a = \dfrac{\mathrm d^2 x_n}{\mathrm dt^2}\vec e_x = \dfrac{\mathrm d^2 u_n}{\mathrm dt^2}\vec e_x\) (car \(x_{n,\text{éq}}\) constant).</li>
+<li>Ressort de droite, longueur \(\ell = \ell_0 + u_{n+1} - u_n\) ; s'il est allongé il tire l'atome \(n\) vers \(+x\) :<br>\(\vec F_{n+1/n} = k\,(\ell_0 + u_{n+1} - \ell_0 - u_n)\,\vec e_x = k(u_{n+1}-u_n)\,\vec e_x\)</li>
+<li>Ressort de gauche, longueur \(\ell_0 + u_n - u_{n-1}\) ; s'il est allongé il tire vers \(-x\) :<br>\(\vec F_{n-1/n} = -k(u_n - u_{n-1})\,\vec e_x\)</li>
+<li>Somme, projetée sur \(\vec e_x\) :</li>
+</ol>
+<div class="reponse">\[ m\,\frac{\mathrm d^2 u_n}{\mathrm dt^2} = k\,\big(u_{n+1} + u_{n-1} - 2u_n\big) \]</div>
+<p>C'est le <b>modèle discontinu</b> : une équation par atome, toutes couplées.</p>
+
+%% carte: milieux-continus
+%% source: Cours p. 2
+Qu'est-ce que l'<b>approximation des milieux continus</b> pour la chaîne d'atomes ? Condition, et correspondance entre les modèles discontinu et continu.
+%% verso
+<div class="reponse">Condition : \(\lambda \gg a\)<br>Correspondance : \(u(x_n, t) = u_n(t)\)</div>
+<img src="milieux-continus.svg">
+<ul>
+<li>Onde sonore : \(\lambda \sim\) cm, alors que \(a \sim 10^{-10}\) m.</li>
+<li>Les déplacements de deux atomes voisins sont donc <b>très proches</b> : on les décrit par une <b>fonction continue</b> \(u(x,t)\) de l'espace et du temps (deux fois dérivable), qui prend la valeur \(u_n(t)\) en \(x = x_n\).</li>
+</ul>
+
+%% carte: passage-continu
+%% source: Cours p. 3
+À partir de l'équation du mouvement de l'atome \(n\) (modèle discontinu), <b>établir</b> l'équation vérifiée par \(u(x,t)\) dans l'approximation des milieux continus.
+%% verso
+<p>Départ : \(m\,\dfrac{\mathrm d^2 u_n}{\mathrm dt^2} = k(u_{n+1} + u_{n-1} - 2u_n)\).</p>
+<ol class="etapes pas-a-pas">
+<li>Milieux continus (\(\lambda \gg a\)) : \(u_n(t) = u(x_n,t)\), donc \(\dfrac{\mathrm d^2 u_n}{\mathrm dt^2} = \dfrac{\partial^2 u}{\partial t^2}\Big|_{x=x_n}\).</li>
+<li><b>DL</b> à l'ordre 2 en \(a\) (légitime car \(a \ll \lambda\)), avec \(x_{n\pm1} = x_n \pm a\) :<br>\(u_{n\pm1}(t) = u(x_n \pm a,t)\)<br>\(\phantom{u_{n\pm1}(t)} = u \pm a\,\dfrac{\partial u}{\partial x} + \dfrac{a^2}{2}\,\dfrac{\partial^2 u}{\partial x^2} + \dots\)<br>(\(u\) et ses dérivées pris en \((x_n,t)\)).</li>
+<li>Somme : les termes d'ordre 1 se compensent.<br>\(u_{n+1} + u_{n-1} - 2u_n \simeq a^2\,\dfrac{\partial^2 u}{\partial x^2}\Big|_{x_n}\)</li>
+<li>D'où \(m\,\dfrac{\partial^2 u}{\partial t^2}\Big|_{x_n} \simeq k a^2\,\dfrac{\partial^2 u}{\partial x^2}\Big|_{x_n}\) ; <b>on extrapole à toute valeur de \(x\)</b>.</li>
+</ol>
+<div class="reponse">\[ \frac{\partial^2 u}{\partial t^2} = \frac{k a^2}{m}\,\frac{\partial^2 u}{\partial x^2} \]</div>
+
+%% carte: dalembert-c-tige
+%% source: Cours p. 3-4
+Tige solide, milieux continus : à partir de l'équation obtenue pour \(u(x,t)\), montrer par analyse dimensionnelle qu'on peut poser une célérité \(c\) ; l'exprimer avec \(a\), \(k\), \(m\) et écrire l'<b>équation de d'Alembert</b>.
+%% verso
+<p>Départ : \(\dfrac{\partial^2 u}{\partial t^2} = \dfrac{k a^2}{m}\,\dfrac{\partial^2 u}{\partial x^2}\).</p>
+<p><b>Analyse dimensionnelle</b> : \(\Big[\dfrac{\partial^2 u}{\partial t^2}\Big] = \dfrac{L}{T^2}\) et \(\Big[\dfrac{\partial^2 u}{\partial x^2}\Big] = \dfrac{L}{L^2}\), donc</p>
+<p>\(\Big[\dfrac{k a^2}{m}\Big] = \dfrac{L^2}{T^2} = [\text{vitesse}]^2\).</p>
+<div class="reponse">On pose \(c^2 = \dfrac{k a^2}{m}\), soit \(c = a\sqrt{\dfrac{k}{m}}\) (m·s⁻¹) :
+\[ \frac{\partial^2 u}{\partial t^2} = c^2\,\frac{\partial^2 u}{\partial x^2} \]</div>
+<ul>
+<li>Équation aux dérivées partielles d'<b>ordre 2</b> en espace et en temps.</li>
+<li>\(c\) : <b>célérité</b>, vitesse caractéristique de propagation d'une onde progressive dans le milieu.</li>
+</ul>
+
+%% carte: piege-celerite
+%% source: Cours p. 4 et p. 7
+Piège classique : la célérité \(c\) est-elle la vitesse des atomes de la tige, ou des points de la corde ? Justifier.
+%% verso
+<div class="reponse"><b>Non.</b> \(c\) est la vitesse de propagation de la <b>perturbation</b>, pas celle de la matière.</div>
+<div class="cote">
+<div><b>Célérité \(c\)</b><br>constante, fixée par le milieu (\(a\sqrt{k/m}\), \(\sqrt{E/\rho}\), \(\sqrt{T/\mu}\)) ; direction \(x\).</div>
+<div><b>Vitesse de vibration</b><br>tige : \(\dfrac{\partial u}{\partial t}\) (selon \(x\)) ; corde : \(\dfrac{\partial y}{\partial t}\) (selon \(y\), ⊥ à la propagation) ; dépend de \(x\), de \(t\) et de l'amplitude.</div>
+</div>
+<div class="ajout">Ordre de grandeur : son de 1 kHz d'amplitude 1 nm dans l'acier : vitesse max des atomes \(\omega u_0 \approx 6\times10^{-6}\) m·s⁻¹, contre \(c \approx 5\times10^3\) m·s⁻¹.</div>
+
+%% carte: odg-c-micro
+%% source: Cours p. 4
+Estimer l'ordre de grandeur de la célérité du son dans un solide à partir du modèle microscopique \(c = a\sqrt{k/m}\). Donner les ordres de grandeur utilisés.
+%% verso
+<ul>
+<li>\(a \sim \tfrac{1}{10}\) nm \(\sim 10^{-10}\) m (distance entre atomes).</li>
+<li>\(m \sim 10^{-26}\) kg (masse d'un atome).</li>
+<li>\(k\) : énergie de liaison \(E_{\text{liais}} \sim \tfrac12 k a^2 \sim 1\) eV \(\Rightarrow k \sim 10\) N·m⁻¹.</li>
+</ul>
+<div class="reponse">\(c = 10^{-10}\sqrt{\dfrac{10}{10^{-26}}} \approx 3\times10^{3}\) m·s⁻¹</div>
+<p>Cohérent avec la mesure : son dans les solides entre <b>3000 et 5000 m·s⁻¹</b>.</p>
+<div class="remarque">Le calcul exact \(k = 2E_{\text{liais}}/a^2\) donne \(\approx 30\) N·m⁻¹ : même ordre de grandeur.</div>
+
+%% carte: young-loi
+%% source: Cours p. 4 ; figure 2
+<img src="traction.svg">
+Énoncer la <b>loi de Young</b> pour une barre de longueur \(L\) au repos, de section \(S\), étirée par une force \(F\). Conditions de validité ? Unité et nature de \(E\) ? Forme utile « niveau macro » ?
+%% verso
+<div class="reponse">\[ \ell = L\left(1 + \frac{F}{ES}\right) \]</div>
+<ul>
+<li>Valable tant que la <b>déformation est petite</b> et que la <b>limite d'élasticité</b> du matériau n'est pas atteinte.</li>
+<li>\(E\) : <b>module d'Young</b>, en <b>Pa</b>, caractéristique du matériau.</li>
+</ul>
+<p>Niveau macro : \(\ell - L = \dfrac{LF}{ES}\) &nbsp;⟺&nbsp; \( F = E\,S\,\dfrac{\ell - L}{L}\) <span class="c1">(\(\frac{\ell-L}{L}\) : allongement relatif)</span>.</p>
+<div class="remarque">Le cours écrit d'abord « I = L × (I + F/ES) » : il faut lire \(\ell = L(1 + F/ES)\).</div>
+
+%% carte: allongement-relatif
+%% source: Cours p. 5
+<img src="troncon.svg">
+Tige parcourue par une onde longitudinale \(u(x,t)\). Exprimer l'<b>allongement relatif</b> du tronçon compris au repos entre \(x\) et \(x+\mathrm dx\).
+%% verso
+<ul>
+<li>Au repos : longueur \(\mathrm dx\).</li>
+<li>Au passage de l'onde : longueur \(\mathrm dx + u(x+\mathrm dx,t) - u(x,t)\).</li>
+<li>Allongement : \(u(x+\mathrm dx,t) - u(x,t) = \dfrac{\partial u}{\partial x}(x,t)\,\mathrm dx\) (DL à l'ordre 1).</li>
+</ul>
+<div class="reponse">\[ \text{allongement relatif} = \frac{\frac{\partial u}{\partial x}\,\mathrm dx}{\mathrm dx} = \frac{\partial u}{\partial x} \]</div>
+<p>(approximation des milieux continus)</p>
+
+%% carte: E-k-a
+%% source: Cours p. 5
+<img src="plans.svg">
+Relier micro et macro : <b>démontrer</b> que \(E = k/a\) (modèle de la chaîne, plans d'atomes espacés de \(a\)). En déduire l'ordre de grandeur de \(E\).
+%% verso
+<ol class="etapes pas-a-pas">
+<li><b>Pour un atome</b> : force du ressort de droite \(\vec F_{n+1/n} = k\big(u(x_n + a,t) - u(x_n,t)\big)\vec e_x\) (milieux continus).</li>
+<li>DL (\(a \ll \lambda\)) : \(\vec F_{n+1/n} = k\,a\,\dfrac{\partial u}{\partial x}\Big|_{x_n}\vec e_x\) ; on extrapole à tout \(x\).</li>
+<li><b>Pour toute la section</b> : \(N = \dfrac{S}{a^2}\) atomes par plan, donc<br>\(\vec F_{\text{droite/gauche}} = \dfrac{S}{a^2}\,k a\,\dfrac{\partial u}{\partial x}\vec e_x = S\,\dfrac{k}{a}\,\dfrac{\partial u}{\partial x}\,\vec e_x\)</li>
+<li><b>Loi de Young</b> (macro) : \(F = E\,S \times\) allongement relatif \(= E\,S\,\dfrac{\partial u}{\partial x}\). On identifie.</li>
+</ol>
+<div class="reponse">\(E = \dfrac{k}{a}\) &nbsp;; ODG : \(\dfrac{10}{10^{-10}} = 10^{11}\) Pa</div>
+
+%% carte: c-young
+%% source: Cours p. 6
+Exprimer la célérité des ondes acoustiques dans une tige solide en fonction de grandeurs <b>macroscopiques</b>. Démontrer.
+%% verso
+<div class="reponse">\[ c = \sqrt{\frac{E}{\rho}} \]</div>
+<ol class="etapes">
+<li>Modèle micro : \(c = \sqrt{\dfrac{k a^2}{m}}\).</li>
+<li>\(k = E a\) (car \(E = k/a\)) : \(c = \sqrt{\dfrac{E a^3}{m}}\).</li>
+<li>Un atome de masse \(m\) par cube de volume \(a^3\) : \(\rho = \dfrac{m}{a^3}\), d'où \(c = \sqrt{E/\rho}\).</li>
+</ol>
+
+%% carte: c-raideur-inertie
+%% source: Cours p. 4, 6 et 8
+Comment la célérité dépend-elle de la <b>raideur</b> et de l'<b>inertie</b> du milieu ? Illustrer sur la tige solide et sur la corde vibrante.
+%% verso
+<div class="reponse">\(c\) <span class="c3">augmente</span> quand la <b>raideur</b> augmente, et <span class="c3">augmente</span> quand l'<b>inertie</b> diminue.</div>
+<table style="width:100%;border-collapse:collapse;text-align:center">
+<tr><th></th><th>raideur</th><th>inertie</th><th>\(c\)</th></tr>
+<tr><td>tige</td><td>\(E\) (ou \(k\))</td><td>\(\rho\) (ou \(m\))</td><td>\(\sqrt{E/\rho}\)</td></tr>
+<tr><td>corde</td><td>\(T\)</td><td>\(\mu\)</td><td>\(\sqrt{T/\mu}\)</td></tr>
+</table>
+
+%% carte: odg-E
+%% source: Plan p. 2 ; cours p. 6
+Ordre de grandeur du <b>module d'Young</b> d'un solide ? Valeurs pour l'acier et l'aluminium ?
+%% verso
+<div class="reponse">\(E \sim 10^{11}\) Pa</div>
+<ul>
+<li>Acier : \(E \approx 200\) GPa.</li>
+<li>Aluminium : \(E \approx 69\) GPa.</li>
+</ul>
+
+%% carte: odg-celerites
+%% source: Plan p. 2
+Ordres de grandeur à connaître : célérité du son dans les <b>solides</b> ; célérité d'une onde sur une <b>corde</b> tendue.
+%% verso
+<div class="reponse">Son dans les solides : <b>3000 à 5000 m·s⁻¹</b><br>Onde sur une corde : <b>~100 m·s⁻¹</b></div>
+<div class="ajout">Acier : \(\sqrt{E/\rho} = \sqrt{200\times10^9/7870} \approx 5{,}0\times10^3\) m·s⁻¹. Pour comparer : son dans l'air ≈ 340 m·s⁻¹.</div>
+
+%% carte: corde-hypotheses
+%% source: Cours p. 6
+Corde vibrante : quelles sont les <b>caractéristiques</b> de la corde et les <b>hypothèses</b> du modèle ? Que vaut la force exercée sur une partie de la corde par le reste de la corde ?
+%% verso
+<ul>
+<li>Corde de longueur \(L\), <b>homogène</b>, de <b>masse linéique</b> \(\mu\) (kg·m⁻¹).</li>
+<li><b>Sans raideur</b> (infiniment souple) : la tension \(\vec T\) est <b>tangente à la corde</b>.</li>
+<li><b>Tension forte</b> : la pesanteur est négligée.</li>
+<li>Vibrations <b>verticales uniquement</b> (selon \(y\)), de <b>faible amplitude</b> (petits angles).</li>
+</ul>
+<div class="reponse">\(\vec T(M,t)\) : force exercée par la partie droite de la corde sur sa partie gauche, en \(M\) ; la partie gauche exerce \(-\vec T(M,t)\) sur la partie droite.</div>
+
+%% carte: corde-dalembert
+%% source: Cours p. 6-7
+<img src="element-corde.svg">
+<b>Établir</b> l'équation de propagation des petits mouvements transversaux \(y(x,t)\) d'une corde de masse linéique \(\mu\) et de tension \(T\). En déduire la célérité.
+%% verso
+<ol class="etapes pas-a-pas">
+<li><b>PFD</b>, syst. {corde entre \(x\) et \(x + \mathrm dx\)}, réf. labo galiléen, pesanteur négligée :<br>\(\mathrm dm\,\vec a = \vec T(x+\mathrm dx,t) - \vec T(x,t)\)</li>
+<li>Masse : \(\mathrm dm = \mu\,\mathrm d\ell\), \(\mathrm d\ell = \sqrt{\mathrm dx^2 + \mathrm dy^2} \simeq \mathrm dx\) (petites variations verticales).<br>Accélération : vibrations verticales, \(\vec a = \dfrac{\partial^2 y}{\partial t^2}\vec e_y\).</li>
+<li>DL : \(\vec T(x+\mathrm dx,t) - \vec T(x,t) = \dfrac{\partial \vec T}{\partial x}\mathrm dx\), donc \(\mu\,\dfrac{\partial^2 y}{\partial t^2}\vec e_y = \dfrac{\partial \vec T}{\partial x}\), avec \(\vec T = T_x\vec e_x + T_y\vec e_y\).</li>
+<li><b>Sur \(x\)</b> : \(\dfrac{\partial T_x}{\partial x} = 0\) ; \(T_x = T\cos\alpha \simeq T\) (petits angles) donc \(\dfrac{\partial T}{\partial x} = 0\) : <span class="c3">la tension ne dépend pas de \(x\)</span> (elle se conserve).</li>
+<li><b>Sur \(y\)</b> : \(\mu\,\dfrac{\partial^2 y}{\partial t^2} = \dfrac{\partial T_y}{\partial x}\), avec \(T_y = T\sin\alpha \simeq T\alpha\) : \(\mu\,\dfrac{\partial^2 y}{\partial t^2} = T\,\dfrac{\partial \alpha}{\partial x}\) (\(T\) indépendant de \(x\)).</li>
+<li>Pente : \(\tan\alpha \simeq \alpha = \dfrac{y(x+\mathrm dx,t) - y(x,t)}{\mathrm dx} = \dfrac{\partial y}{\partial x}\)</li>
+</ol>
+<div class="reponse">\[ \frac{\partial^2 y}{\partial t^2} = \frac{T}{\mu}\,\frac{\partial^2 y}{\partial x^2} \qquad c = \sqrt{\frac{T}{\mu}} \]</div>
+
+%% carte: tension-poulie
+%% source: Cours p. 8 ; figure 3
+<img src="poulie-recto.svg">
+La corde est tendue par une masse \(m\) suspendue via une poulie. Que vaut la tension \(T\) de la corde qui vibre ? Justifier.
+%% verso
+<img src="poulie.svg">
+<ol class="etapes">
+<li><b>PFD</b>, syst. {masse \(m\)} à l'équilibre, réf. labo galiléen : \(\vec T_0 + \vec P = \vec 0\), où \(\vec T_0\) est la force exercée par la corde sur la masse.</li>
+<li>Donc \(T_0 = mg\).</li>
+<li>La tension se transmet le long de la corde : \(T = T_0\).</li>
+</ol>
+<div class="reponse">\(T = mg\)</div>
+<div class="ajout">\(T = T_0\) suppose une poulie idéale (sans frottement, de masse négligeable).</div>
+
+%% carte: an-corde-acier
+%% source: Cours p. 8
+Corde d'acier (\(\rho = 7870\) kg·m⁻³) de diamètre \(D = 0{,}30\) mm, tendue sous \(T_0 = 100\) N. Calculer la célérité des ondes transversales. (Relier d'abord \(\mu\) et \(\rho\).)
+%% verso
+<ul>
+<li>Corde de longueur \(L\), rayon \(R\) : \(m = \mu L = \rho L S\), donc \(\mu = \rho S = \rho\pi R^2 = \rho\,\dfrac{\pi D^2}{4}\).</li>
+<li>\(\mu = 7870 \times \dfrac{\pi\,(0{,}30\times10^{-3})^2}{4} \approx 5{,}6\times10^{-4}\) kg·m⁻¹.</li>
+</ul>
+<div class="reponse">\[ c = \sqrt{\frac{T_0}{\rho\,\pi D^2/4}} \approx 424 \text{ m·s}^{-1} \]</div>
+<p>Cohérent avec l'ordre de grandeur ~100 m·s⁻¹ d'une corde.</p>
+
+%% carte: dalembert-proprietes
+%% source: Cours p. 9
+Donner deux propriétés fondamentales de l'équation de d'Alembert \(\dfrac{\partial^2 \psi}{\partial t^2} = c^2\,\dfrac{\partial^2 \psi}{\partial x^2}\), et leur conséquence physique.
+%% verso
+<ol class="etapes">
+<li><b>Invariante par renversement du temps</b> \(t \mapsto -t\) (seulement des dérivées d'ordre 2 en \(t\)) → elle décrit une <b>évolution réversible</b> : pas de phénomène dissipatif.</li>
+<li><b>Linéaire</b> → on peut utiliser le <b>principe de superposition</b> des solutions (et la notation complexe).</li>
+</ol>
+
+%% carte: solution-generale-opp
+%% source: Cours p. 9
+Forme générale des solutions \(\psi(x,t)\) de l'équation de d'Alembert à une dimension (milieu illimité) ? Deux écritures.
+%% verso
+<div class="reponse">Somme de deux <b>ondes planes progressives</b>, l'une vers les \(x\) croissants, l'autre vers les \(x\) décroissants :
+\[ \psi(x,t) = f\!\left(t - \frac{x}{c}\right) + g\!\left(t + \frac{x}{c}\right) \]
+\[ \psi(x,t) = s(x - ct) + p(x + ct) \]</div>
+<p>\(f, g, s, p\) : fonctions quelconques deux fois dérivables.</p>
+
+%% carte: opp-interpretation
+%% source: Cours p. 9
+Interpréter physiquement \(\psi(x,t) = s(x - ct)\) : montrer que c'est une onde qui se propage, et préciser dans quel sens et à quelle vitesse.
+%% verso
+<p>Cherchons \(\Delta x\) tel que \(\psi(x+\Delta x, t+\Delta t) = \psi(x,t)\) :</p>
+<p>Or \(\psi(x+\Delta x, t+\Delta t) = s\big(x - ct + \Delta x - c\Delta t\big)\) : c'est \(s(x - ct)\) si</p>
+<div class="reponse">\(\Delta x = c\,\Delta t > 0\) : la forme se translate sans se déformer, à la vitesse \(c\), vers les <b>\(x\) croissants</b>. C'est une OPP.</div>
+<img src="impulsion.svg">
+<p>De même, \(p(x+ct)\) se propage vers les \(x\) décroissants.</p>
+
+%% carte: verif-dalembert
+%% source: Cours p. 10
+<b>Vérifier</b> que \(\psi(x,t) = f\!\left(t - \dfrac{x}{c}\right)\) est solution de l'équation de d'Alembert.
+%% verso
+<p>On pose \(u = t - \dfrac{x}{c}\) : \(\dfrac{\partial u}{\partial t} = 1\), \(\dfrac{\partial u}{\partial x} = -\dfrac{1}{c}\).</p>
+<ol class="etapes pas-a-pas">
+<li>\(\dfrac{\partial \psi}{\partial t} = \dfrac{\mathrm df}{\mathrm du}\,\dfrac{\partial u}{\partial t} = \dfrac{\mathrm df}{\mathrm du}\), puis \(\dfrac{\partial^2 \psi}{\partial t^2} = \dfrac{\mathrm d^2 f}{\mathrm du^2}\,\dfrac{\partial u}{\partial t} = \dfrac{\mathrm d^2 f}{\mathrm du^2}\).</li>
+<li>\(\dfrac{\partial \psi}{\partial x} = \dfrac{\mathrm df}{\mathrm du}\,\dfrac{\partial u}{\partial x} = -\dfrac{1}{c}\,\dfrac{\mathrm df}{\mathrm du}\), puis \(\dfrac{\partial^2 \psi}{\partial x^2} = -\dfrac{1}{c}\,\dfrac{\mathrm d^2 f}{\mathrm du^2}\times\left(-\dfrac{1}{c}\right) = \dfrac{1}{c^2}\,\dfrac{\mathrm d^2 f}{\mathrm du^2}\).</li>
+</ol>
+<div class="reponse">On a bien \(\dfrac{\partial^2 \psi}{\partial t^2} = c^2\,\dfrac{\partial^2 \psi}{\partial x^2}\).</div>
+
+%% carte: surface-onde-plane
+%% source: Plan p. 1 ; cours p. 9
+Définir une <b>surface d'onde</b>, puis une <b>onde plane</b>.
+%% verso
+<ul>
+<li><b>Surface d'onde</b> : surface continue de l'espace dont tous les points sont dans le <b>même état vibratoire</b> : le champ \(\psi\) y prend la même valeur.</li>
+<li><b>Onde plane</b> : ses surfaces d'onde sont des <b>plans parallèles</b> (plans d'onde). C'est une onde à <b>une</b> dimension spatiale cartésienne.</li>
+</ul>
+<div class="remarque">\(\psi(x,t)\) est toujours une onde plane : elle ne dépend que d'une variable d'espace ; plans d'onde : \(x =\) cste.</div>
+
+%% carte: opph-definition
+%% source: Cours p. 10
+Écrire une <b>OPPH</b> se propageant vers les \(x\) croissants. Nommer chaque terme. Définir ses grandeurs temporelles et spatiales et leurs relations.
+%% verso
+<div class="reponse">\[ \psi(x,t) = \psi_0\cos(\omega t - kx + \varphi) \]</div>
+<p>\(\psi_0\) : amplitude ; \(\varphi\) : phase à l'origine ; harmonique = sinusoïdale de pulsation \(\omega\) ; monochromatique = de longueur d'onde \(\lambda\).</p>
+<img src="opph.svg">
+<table style="width:100%;border-collapse:collapse;text-align:center">
+<tr><th>temporel</th><th>spatial</th></tr>
+<tr><td>période \(T\)</td><td>longueur d'onde \(\lambda\)</td></tr>
+<tr><td>\(\omega = \dfrac{2\pi}{T}\)</td><td>\(k = \dfrac{2\pi}{\lambda}\)</td></tr>
+<tr><td>\(f = \dfrac{1}{T}\)</td><td>\(\sigma = \dfrac{1}{\lambda}\)</td></tr>
+</table>
+<p>Tous \(> 0\). Le lien \(k = f(\omega)\) est la relation de dispersion.</p>
+
+%% carte: vecteur-onde
+%% source: Cours p. 11
+Définir le <b>vecteur d'onde</b> d'une OPPH. Que vaut sa composante \(k_x\) pour une OPPH (équation de d'Alembert) vers les \(x\) croissants ? vers les \(x\) décroissants ?
+%% verso
+<div class="reponse">\(\vec k = k\,\vec n\), \(\vec n\) : vecteur unitaire dans le <b>sens de propagation</b> ; \(\|\vec k\| = k\).</div>
+<ul>
+<li>OPPH vers \(x\) croissants : \(\vec k = \dfrac{\omega}{c}\vec e_x\), \(k_x = +\dfrac{\omega}{c}\).</li>
+<li>OPPH vers \(x\) décroissants : \(\vec k = -\dfrac{\omega}{c}\vec e_x\), \(k_x = -\dfrac{\omega}{c}\).</li>
+</ul>
+<div class="attention">La <b>composante</b> \(k_x\) peut être positive ou négative ; la <b>norme</b> \(k\) est toujours positive.</div>
+<div class="remarque">Le cours écrit « \(k_{xc}\) » : coquille pour \(k_x\).</div>
+
+%% carte: relation-dispersion
+%% source: Cours p. 11
+<b>Établir</b> la relation de dispersion associée à l'équation de d'Alembert, pour \(\psi = \psi_0\cos(\omega t - kx + \varphi)\). Montrer qu'une telle OPPH est bien une OPP.
+%% verso
+<ol class="etapes">
+<li>\(\dfrac{\partial^2 \psi}{\partial t^2} = -\omega^2\psi\) et \(\dfrac{\partial^2 \psi}{\partial x^2} = -k^2\psi\).</li>
+<li>Dans d'Alembert : \(-\omega^2\psi = -c^2k^2\psi\) pour tout \((x,t)\), donc \(k^2 = \dfrac{\omega^2}{c^2}\).</li>
+</ol>
+<div class="reponse">\[ k = \frac{\omega}{c} \quad (k > 0) \]</div>
+<p>Alors, avec \(\dfrac{k}{\omega} = \dfrac{1}{c}\) :</p>
+\[ \psi = \psi_0\cos\!\Big(\omega\big(t - \tfrac{x}{c}\big) + \varphi\Big) = f\!\left(t - \tfrac{x}{c}\right) \]
+<p>C'est bien une OPP.</p>
+
+%% carte: notation-complexe
+%% source: Cours p. 11-12
+Pourquoi peut-on utiliser la notation complexe avec l'équation de d'Alembert ? Écrire l'OPPH \(\psi_0\cos(\omega t - kx + \varphi)\) en notation complexe.
+%% verso
+<p>L'équation de d'Alembert est <b>linéaire</b> (à coefficients réels) : on peut travailler sur la grandeur complexe puis prendre la partie réelle.</p>
+<div class="reponse">\[ \underline{\psi}(x,t) = \psi_0\,e^{i(\omega t - kx + \varphi)} = \underline{\psi_0}\,e^{i(\omega t - kx)} \]
+avec \(\underline{\psi_0} = \psi_0\,e^{i\varphi}\) et \(\psi = \mathrm{Re}(\underline{\psi})\).</div>
+
+%% carte: opph-non-physique
+%% source: Plan p. 1 ; cours p. 12
+Une OPPH peut-elle décrire une onde physique réelle ? Pourquoi l'étudier quand même ?
+%% verso
+<div class="reponse"><b>Non</b> : elle a une <b>extension spatiale et temporelle infinie</b>, donc une <b>énergie infinie</b>.</div>
+<p>Mais toute fonction périodique se ramène à une somme de sinusoïdes (<b>Fourier</b>) : une superposition d'OPPH décrit un vrai signal (<b>paquet d'ondes</b>). Par linéarité, étudier les OPPH suffit.</p>
+
+%% carte: osh-separation
+%% source: Cours p. 12-13
+<b>Démontrer</b> la forme des solutions de l'équation de d'Alembert de la forme \(\psi(x,t) = F(x)\,G(t)\) (ondes stationnaires).
+%% verso
+<ol class="etapes pas-a-pas">
+<li>Dans d'Alembert : \(F(x)\,\dfrac{\mathrm d^2 G}{\mathrm dt^2} = c^2\,G(t)\,\dfrac{\mathrm d^2 F}{\mathrm dx^2}\), soit \(\dfrac{1}{G}\dfrac{\mathrm d^2 G}{\mathrm dt^2} = \dfrac{c^2}{F}\dfrac{\mathrm d^2 F}{\mathrm dx^2}\).</li>
+<li>Fonction de \(t\) seul = fonction de \(x\) seul, pour tous \(x, t\) : c'est une <b>constante</b>. Donc \(\dfrac{\mathrm d^2 G}{\mathrm dt^2} = \text{cste}\times G\).</li>
+<li>Si cste \(> 0\) : \(G = Ae^{\sqrt{\text{cste}}\,t} + Be^{-\sqrt{\text{cste}}\,t}\) diverge quand \(t \to +\infty\) : impossible. <span class="ajout" style="display:inline;padding:0 4px">Si cste = 0, \(G\) affine diverge aussi.</span></li>
+<li>Donc cste \(\lt 0\), on pose cste \(= -\omega^2\) : \(\ddot G + \omega^2 G = 0\) (type oscillateur harmonique) → \(G(t) = G_0\cos(\omega t + \varphi_G)\).</li>
+<li>Puis \(\dfrac{\mathrm d^2 F}{\mathrm dx^2} + \dfrac{\omega^2}{c^2}F = 0\) → \(F(x) = F_0\cos(kx + \varphi_F)\), \(k = \dfrac{\omega}{c}\).</li>
+</ol>
+<div class="reponse">\[ \psi(x,t) = \psi_0\cos(\omega t + \varphi_G)\cos(kx + \varphi_F) \]
+<b>onde stationnaire harmonique</b> (OSH), \(\psi_0 = F_0G_0\) ; s'écrit aussi avec des sinus.</div>
+
+%% carte: osh-proprietes
+%% source: Plan p. 2 ; cours p. 13
+Onde stationnaire harmonique : quelles différences fondamentales avec une OPPH ? Où sont les nœuds, à quelle distance les uns des autres ? Piège sur la notation complexe ?
+%% verso
+<div class="reponse">Une onde stationnaire <b>ne se propage pas</b> : <b>pas de vecteur d'onde</b> \(\vec k\). Elle présente des <b>nœuds</b> et des <b>ventres</b> de vibration fixes.</div>
+<img src="osh.svg">
+<ul>
+<li>\(\psi = \psi_0\cos(\omega t + \varphi_G)\cos(kx + \varphi_F)\) ; <b>nœuds</b> (\(\psi = 0\ \forall t\)) : \(\cos(kx + \varphi_F) = 0\).</li>
+<li>Deux nœuds (ou deux ventres) consécutifs sont distants de <b>\(\lambda/2\)</b> ; nœud et ventre voisins de \(\lambda/4\).</li>
+<li>Variables séparées : tous les points vibrent en phase ou en opposition de phase.</li>
+</ul>
+<div class="attention">L'écriture \(\psi = F(x)\,G(t)\) n'est <b>pas</b> valable en représentation complexe : on la cherche en réels.</div>
+
+%% carte: osh-origine
+%% source: Plan p. 2 ; cours p. 12
+Dans quelle situation physique apparaît une onde stationnaire ? Quand est-il naturel de chercher la solution sous cette forme ?
+%% verso
+<div class="reponse">Dans un <b>milieu limité</b> : une onde progressive harmonique se superpose à l'onde <b>régressive</b> générée par la <b>réflexion</b> sur une condition aux limites finie. OPPH⁺ + OPPH⁻ = OSH.</div>
+<ul>
+<li>Toute solution de l'équation de d'Alembert peut s'écrire comme une <b>combinaison linéaire d'ondes stationnaires</b>.</li>
+<li>Dès que les conditions aux limites imposent un <b>nœud de vibration</b>, il est naturel de chercher la solution sous forme d'ondes stationnaires.</li>
+</ul>
+
+%% carte: recapitulatif-milieux
+%% source: Cours p. 14
+Problème 1D, équation de d'Alembert : quelle forme de solution chercher pour<br>① un milieu illimité ;<br>② un milieu semi-infini ;<br>③ un milieu infini ou semi-infini avec une perturbation harmonique ;<br>④ un milieu limité ?
+%% verso
+<ol class="etapes">
+<li>Illimité (\(x \in\, ]-\infty, +\infty[\)) → <b>OPP</b>.</li>
+<li>Semi-infini (\(x \in\, ]-\infty, 0]\)) → <b>OPP</b> (incidente, puis réfléchie).</li>
+<li>Perturbation harmonique → <b>OPPH</b> ; elle devient <b>OSH</b> s'il y a réflexion.</li>
+<li>Limité → <b>OSH</b>.</li>
+</ol>
+
+%% carte: mode-propre-def
+%% source: Plan p. 2
+Définir un <b>mode</b>, puis un <b>mode propre</b>. Quelle est la nature des modes propres de la corde de Melde ?
+%% verso
+<ul>
+<li><b>Mode</b> : solution des équations du mouvement <b>compatible avec les conditions aux limites</b>, et dont la dépendance en temps est <b>harmonique</b>. Leur nature dépend de celle des conditions aux limites.</li>
+<li>Quand les conditions aux limites sont imposées dans la direction de propagation (corde de Melde, corde fixée aux deux bouts), les modes sont appelés <b>modes propres</b>.</li>
+</ul>
+<div class="reponse">Ce sont des <b>ondes stationnaires</b>.</div>
+
+%% carte: modes-propres-demo
+%% source: Cours p. 14-15
+Corde vibrante de longueur \(L\), <b>fixée en \(x = 0\) et \(x = L\)</b>, en régime libre. <b>Déterminer</b> les modes propres : \(k_n\), \(\omega_n\), \(\lambda_n\), \(f_n\), et l'expression de \(y_n(x,t)\).
+%% verso
+<ol class="etapes pas-a-pas">
+<li>Milieu limité + d'Alembert → OSH : \(y(x,t) = y_0\cos(\omega t + \varphi_G)\cos(kx + \varphi_F)\).</li>
+<li><b>CL en \(x = 0\)</b> : \(y_0\cos(\omega t + \varphi_G)\cos\varphi_F = 0\ \forall t\), avec \(y_0 \neq 0\) → \(\cos\varphi_F = 0\) ; on choisit \(\varphi_F = -\tfrac{\pi}{2}\) :<br>\(y(x,t) = y_0\cos(\omega t + \varphi_G)\sin(kx)\).</li>
+<li><b>CL en \(x = L\)</b> : \(\sin(kL) = 0\) → \(kL = n\pi\), avec \(k > 0\) donc \(n \in \mathbb N^*\).</li>
+<li>\(k_n = \dfrac{n\pi}{L}\) (pulsation spatiale).</li>
+<li>\(k_n = \dfrac{\omega_n}{c}\) → \(\omega_n = \dfrac{n\pi c}{L}\) (pulsation temporelle).</li>
+<li>\(\lambda_n = \dfrac{2\pi}{k_n} = \dfrac{2L}{n}\), soit \(L = n\,\dfrac{\lambda_n}{2}\).</li>
+</ol>
+<div class="reponse">\[ f_n = n\,\frac{c}{2L} \]
+\[ y_n(x,t) = y_{0n}\cos(\omega_n t + \varphi_n)\sin(k_n x) \]</div>
+<p>\(\omega_n\) et \(k_n\) sont <b>quantifiés</b> : seules certaines valeurs sont possibles.</p>
+
+%% carte: modes-propres-trace
+%% source: Cours p. 16
+Corde fixée en \(x = 0\) et \(x = L\) : <b>tracer</b> l'allure des modes propres \(n = 1, 2, 3\). Nommer ces modes. Où sont les nœuds du mode \(n\) ?
+%% verso
+<img src="modes.svg">
+<ul>
+<li>\(n = 1\) : <b>fondamental</b> ; \(n \geq 2\) : <b>\(n\)-ième harmonique</b>.</li>
+<li>Nœuds : \(\sin\!\left(\dfrac{n\pi x}{L}\right) = 0\) → \(x = p\,\dfrac{L}{n}\), \(p = 0, \dots, n\) : <b>\(n + 1\) nœuds</b>, \(n\) fuseaux (ventres).</li>
+<li>Une demi-longueur d'onde entre deux nœuds : \(L = n\,\dfrac{\lambda_n}{2}\).</li>
+</ul>
+<div class="remarque">On dit aussi que le fondamental est l'harmonique de rang 1.</div>
+
+%% carte: an-guitare
+%% source: Cours p. 16
+Corde de guitare de longueur \(L = 64\) cm, fixée aux deux bouts, où les ondes ont une célérité \(c = 424\) m·s⁻¹. Fréquence du fondamental ?
+%% verso
+<div class="reponse">\[ f_1 = \frac{c}{2L} = \frac{424}{2\times0{,}64} \approx 331 \text{ Hz} \]</div>
+<p>Harmoniques : \(f_n = n f_1\) (662 Hz, 993 Hz…).</p>
+
+%% carte: solution-generale-CI
+%% source: Cours p. 17
+Corde fixée en \(x = 0\) et \(x = L\) : écrire la <b>solution générale</b> \(y(x,t)\) en régime libre. Comment la déterminer à partir des conditions initiales \(y(x,0) = a(x)\) et \(\dfrac{\partial y}{\partial t}(x,0) = b(x)\) ?
+%% verso
+<p>Équation linéaire → <b>superposition des modes propres</b> :</p>
+<div class="reponse">\[ \begin{aligned} y(x,t) = \sum_{n=1}^{\infty}\Big(&A_n\cos\frac{n\pi c}{L}t \\ &+ B_n\sin\frac{n\pi c}{L}t\Big)\sin\frac{n\pi x}{L} \end{aligned} \]</div>
+<p>(équivalent à \(\sum y_{0n}\cos(\omega_n t + \varphi_n)\sin(k_n x)\), plus pratique.)</p>
+<ul>
+<li>Forme initiale : \(a(x) = \displaystyle\sum_{n\geq1} A_n\sin\frac{n\pi x}{L}\) → donne les \(A_n\).</li>
+<li>Vitesse initiale : \(b(x) = \displaystyle\sum_{n\geq1} B_n\,\frac{n\pi c}{L}\sin\frac{n\pi x}{L}\) → donne les \(B_n\).</li>
+<li><span class="c2">Corde lâchée sans vitesse initiale : \(B_n = 0\).</span></li>
+</ul>
+<div class="ajout">Les \(A_n\) sont les coefficients de Fourier de \(a\) prolongée en fonction impaire, \(2L\)-périodique : \(A_n = \dfrac{2}{L}\displaystyle\int_0^L a(x)\sin\frac{n\pi x}{L}\,\mathrm dx\).</div>
+
+%% carte: spectre-corde
+%% source: Cours p. 17
+Une corde fixée aux deux bouts est pincée puis lâchée sans vitesse initiale. Quelles fréquences contient sa vibration ? Allure du spectre ?
+%% verso
+<div class="reponse">Uniquement les fréquences propres \(f_n = n f_1\), \(f_1 = \dfrac{c}{2L}\) : un <b>fondamental</b> et ses <b>harmoniques</b>. Le spectre est un <b>spectre de raies</b> (décomposition en série de Fourier).</div>
+<img src="spectre.svg">
+<p>Les amplitudes des raies sont fixées par les <b>conditions initiales</b> (forme de la corde lâchée).</p>
+<div class="ajout">Exemple calculé : corde pincée en \(L/4\), \(|A_n| \propto \left|\sin\frac{n\pi}{4}\right|/n^2\). Les harmoniques 4, 8… sont absents : leurs modes ont un nœud au point pincé.</div>
+
+%% carte: melde-demo
+%% source: Cours p. 18
+<b>Corde de Melde</b> : le vibreur impose \(y(0,t) = a\cos(\omega t)\), la corde est fixe en \(x = L\) (poulie). <b>Établir</b> \(y(x,t)\) en régime forcé.
+%% verso
+<ol class="etapes pas-a-pas">
+<li>Milieu limité + d'Alembert → OSH : \(y(x,t) = y_0\cos(\omega t + \varphi_G)\cos(kx + \varphi_F)\), \(k = \omega/c\).</li>
+<li><b>CL en \(x = 0\)</b> : \(y_0\cos(\omega t + \varphi_G)\cos\varphi_F = a\cos(\omega t)\ \forall t\) → on prend \(\varphi_G = 0\) et \(y_0\cos\varphi_F = a\) :<br>\(y(x,t) = \dfrac{a}{\cos\varphi_F}\cos(\omega t)\cos(kx + \varphi_F)\).</li>
+<li><b>CL en \(x = L\)</b> : \(\cos(kL + \varphi_F) = 0\) → \(kL + \varphi_F = \tfrac{\pi}{2}\), soit \(\varphi_F = \tfrac{\pi}{2} - kL\).</li>
+<li>\(\cos\varphi_F = \cos\!\left(\tfrac{\pi}{2} - kL\right) = \sin(kL)\) et \(\cos\!\left(k(x - L) + \tfrac{\pi}{2}\right) = -\sin\big(k(x-L)\big)\).</li>
+</ol>
+<div class="reponse">\[ y(x,t) = -\frac{a}{\sin(kL)}\cos(\omega t)\sin\big(k(x - L)\big) \]</div>
+<p>Amplitude des ventres : \(\dfrac{a}{|\sin(kL)|}\).</p>
+
+%% carte: melde-resonance
+%% source: Plan p. 2 ; cours p. 18
+Définir la <b>résonance</b>. Corde de Melde (vibreur d'amplitude \(a\) en \(x = 0\), corde fixe en \(x = L\)) : pour quelles fréquences du vibreur y a-t-il résonance ? Justifier. Limite du modèle ?
+%% verso
+<div class="reponse">Un système entre en <b>résonance</b> lorsqu'il est excité à une fréquence égale à l'une de ses <b>fréquences propres</b>.<br>Ici : \(f_{\text{rés}} = f_{\text{propre}} = n\,\dfrac{c}{2L}\).</div>
+<ul>
+<li>Régime forcé : \(y(x,t) = -\dfrac{a}{\sin(kL)}\cos(\omega t)\sin\big(k(x-L)\big)\)</li>
+<li>Amplitude maximale quand \(\sin(kL) = 0\), soit \(kL = n\pi\) : \(k_{\text{rés}} = k_{\text{mode propre}}\).</li>
+</ul>
+<img src="resonance.svg">
+<div class="ajout">Le modèle sans amortissement prévoit une amplitude infinie à la résonance. En réalité, l'amortissement la limite (pics finis, à peine décalés). Partout ailleurs, l'amplitude reste de l'ordre de \(a\).</div>
+
+%% carte: melde-experience
+%% source: Cours, figure 4
+<img src="melde-recto.svg">
+Corde de Melde à tension et longueur fixées : on fait varier la fréquence du vibreur et on observe les trois aspects ci-dessus (échelle verticale de (1) très dilatée). Interpréter chacun.
+%% verso
+<img src="melde-verso.svg">
+<ol class="etapes">
+<li><b>Fréquence quelconque</b> : OSH de faible amplitude (de l'ordre de \(a\)).</li>
+<li><b>1re résonance</b>, \(f = f_1 = \dfrac{c}{2L}\) : un fuseau, \(L = \dfrac{\lambda}{2}\), grande amplitude.</li>
+<li><b>2e résonance</b>, \(f = 2f_1\) : deux fuseaux, nœud en \(L/2\), \(L = \lambda\).</li>
+</ol>
+<div class="ajout">À la résonance, l'amplitude \(a\) du vibreur est très petite devant celle des ventres : le point d'attache au vibreur apparaît presque comme un nœud.</div>

@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\draw[-{Stealth}] (-0.6,0) -- (6.4,0) node[right,font=\small] {$x$};
+\node[font=\small,anchor=east] at (-0.7,0.55) {au repos};
+\fill[c1!25] (1,0.35) rectangle (3,0.75); \draw[c1] (1,0.35) rectangle (3,0.75);
+\node[font=\small] at (1,1.05) {$x$}; \node[font=\small] at (3,1.05) {$x+\mathrm{d}x$};
+\draw[{Stealth}-{Stealth}] (1,0.15) -- (3,0.15) node[midway,below,font=\small] {$\mathrm{d}x$};
+\node[font=\small,anchor=east,align=right] at (-0.7,-1.25) {au passage\\ de l'onde};
+\fill[c2!25] (1.6,-1.45) rectangle (4.3,-1.05); \draw[c2] (1.6,-1.45) rectangle (4.3,-1.05);
+\draw[densely dotted] (1,0.35) -- (1,-1.9); \draw[densely dotted] (3,0.35) -- (3,-1.9);
+\draw[c2,-{Stealth},thick] (1,-1.75) -- (1.6,-1.75) node[pos=0.5,below=3pt,font=\small] {$u(x,t)$};
+\draw[c2,-{Stealth},thick] (3,-1.75) -- (4.3,-1.75) node[pos=0.6,below=3pt,font=\small] {$u(x+\mathrm{d}x,t)$};
+\end{tikzpicture}

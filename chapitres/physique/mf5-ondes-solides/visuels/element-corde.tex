@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\draw[-{Stealth}] (-0.3,0) -- (7,0) node[right,font=\small] {$x$};
+\draw[-{Stealth}] (0,-0.3) -- (0,4) node[above,font=\small] {$y$};
+\draw[thick,c1] (2.1,1.82) .. controls (2.5,1.95) and (2.75,2.08) .. (3,2.2) -- (4.6,3.0) .. controls (5.2,3.3) and (5.8,3.4) .. (6.4,3.4);
+\fill (3,2.2) circle (1.6pt); \fill (4.6,3.0) circle (1.6pt);
+\draw[densely dotted] (3,2.2) -- (3,0) node[below,font=\small] {$x$};
+\draw[densely dotted] (4.6,3.0) -- (4.6,0) node[below,font=\small] {$x+\mathrm{d}x$};
+\draw[c2,-{Stealth},very thick] (3,2.2) -- ++(206.57:1.6) node[below left,font=\small] {$-\vec T(x,t)$};
+\draw[c2,-{Stealth},very thick] (4.6,3.0) -- ++(26.57:1.6) node[right,font=\small] {$\vec T(x+\mathrm{d}x,t)$};
+\draw[densely dashed] (3,2.2) -- (4.4,2.2);
+\draw (3.8,2.2) arc (0:26.57:0.8); \node[font=\small] at (4.05,2.42) {$\alpha$};
+\draw[densely dotted] (3,2.2) -- (0,2.2) node[left,font=\small] {$y(x,t)$};
+\end{tikzpicture}

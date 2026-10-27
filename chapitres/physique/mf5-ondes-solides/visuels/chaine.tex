@@ -1,0 +1,24 @@
+\begin{tikzpicture}[ressort/.style={decorate,decoration={coil,aspect=0.45,segment length=2.2mm,amplitude=1.6mm}}]
+% au repos
+\node[font=\small,anchor=east] at (-0.9,0) {au repos};
+\draw[ressort] (-0.8,0) -- (0,0);
+\draw[ressort] (0,0) -- (2.4,0) node[midway,above=2.5pt,font=\small] {$k$};
+\draw[ressort] (2.4,0) -- (4.8,0) node[midway,above=2.5pt,font=\small] {$k$};
+\draw[ressort] (4.8,0) -- (5.6,0);
+\foreach \x/\n in {0/n-1,2.4/n,4.8/n+1}{
+  \fill (\x,0) circle (2.6pt);
+  \node[below=3pt,font=\small] at (\x,0) {$\n$};
+  \draw[gray,densely dotted] (\x,-0.45) -- (\x,-2.35);}
+\draw[{Stealth}-{Stealth}] (0,0.7) -- (2.4,0.7) node[midway,above,font=\small] {$a=\ell_0$};
+% au passage de l'onde
+\node[font=\small,anchor=east,align=right] at (-0.9,-1.8) {au passage\\ de l'onde};
+\draw[ressort] (-0.8,-1.8) -- (0.5,-1.8);
+\draw[ressort] (0.5,-1.8) -- (2.0,-1.8);
+\draw[ressort] (2.0,-1.8) -- (5.5,-1.8);
+\draw[ressort] (5.5,-1.8) -- (6.1,-1.8);
+\foreach \x in {0.5,2.0,5.5}{\fill (\x,-1.8) circle (2.6pt);}
+\draw[c2,-{Stealth},thick] (0,-2.3) -- (0.5,-2.3) node[below=2pt,font=\small] {$u_{n-1}(t)$};
+\draw[c2,-{Stealth},thick] (2.4,-2.3) -- (2.0,-2.3) node[below=2pt,font=\small] {$u_n(t)$};
+\draw[c2,-{Stealth},thick] (4.8,-2.3) -- (5.5,-2.3) node[below=2pt,font=\small] {$u_{n+1}(t)$};
+\draw[-{Stealth}] (-0.8,-3.3) -- (6.4,-3.3) node[right,font=\small] {$x$};
+\end{tikzpicture}

@@ -21,6 +21,11 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 import matplotlib.ticker as ticker  # noqa: E402
 import numpy as np  # noqa: E402
+from matplotlib import font_manager  # noqa: E402
+
+# Latin Modern (fournie avec LaTeX) : même aspect que cmr10, avec les accents français.
+for _f in Path("/usr/share/texmf/fonts/opentype/public/lm").glob("lmroman10-*.otf"):
+    font_manager.fontManager.addfont(str(_f))
 
 C = {"c1": "#1F5FBF", "c2": "#C0392B", "c3": "#1E8449", "c4": "#7D3C98", "noir": "#1D1D1F", "gris": "#8E8E93"}
 
@@ -32,7 +37,7 @@ plt.rcParams.update({
     "savefig.pad_inches": 0.05,
     "svg.fonttype": "path",
     "font.family": "serif",
-    "font.serif": ["cmr10", "DejaVu Serif"],
+    "font.serif": ["Latin Modern Roman", "cmr10", "DejaVu Serif"],
     "mathtext.fontset": "cm",
     "axes.formatter.use_mathtext": True,
     "axes.unicode_minus": True,
