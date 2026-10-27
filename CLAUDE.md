@@ -10,6 +10,9 @@ Lire cette page en entier avant chaque demande. La partie *Philosophie* prime su
 ### Le but
 Une fois un chapitre dans Anki, l'élève ne rouvre plus jamais le cours. Tout ce qu'il doit savoir, comprendre, savoir refaire et savoir rédiger passe par les cartes. La mesure du succès : les DS, les colles, les concours.
 
+### Autonomie complète
+L'élève donne un cours (et éventuellement un périmètre ou un paquet existant), puis récupère le paquet fini. Il n'intervient pas en cours de route : aucune validation, aucune question, aucune décision à lui laisser. Chaque choix se fait seul, avec jugement.
+
 ### Aucune règle, un jugement
 Il n'y a pas de format type. Chaque cours est différent, et chaque élément d'un même cours aussi. Pour chaque élément, une seule question :
 
@@ -27,7 +30,7 @@ Avant la moindre carte, lire tout le cours (ou la partie demandée) en profondeu
 ### Fidélité au cours et au prof
 Les cartes transmettent le cours **tel que le prof l'enseigne** : ses notations, ses conventions, les noms qu'il donne aux théorèmes et aux lois, sa rédaction, sa façon de dessiner (en chimie : flèches, doublets, charges, intermédiaires, présentation des mécanismes). Dans le doute, faire comme le prof. La forme peut être reformulée ; le fond et la syntaxe du prof sont respectés.
 
-Une erreur, une coquille, une ambiguïté ou une incohérence dans le cours n'est ni recopiée ni corrigée en silence : elle est **signalée à l'élève**, qui tranche.
+Une erreur, une coquille ou une incohérence dans le cours n'est jamais recopiée : on la corrige, et la carte concernée le dit brièvement (par exemple « le cours écrit … : coquille »), pour que l'élève ne soit pas déstabilisé en DS ou face à son prof. Une ambiguïté se tranche par l'interprétation la plus juste au regard du programme et des concours.
 
 Compléter le cours est permis quand ça sert vraiment (une intuition, un ordre de grandeur, un piège relevé par les jurys), à condition que ce soit juste et identifiable comme un ajout.
 
@@ -54,12 +57,12 @@ L'ensemble des cartes couvre tout le périmètre demandé : rien d'important ne 
 ## Déroulement d'une demande
 
 1. **Cadrer.** Respecter exactement le périmètre donné (tout le cours, ou seulement une partie). Si un paquet existant est fourni, la suite le prolonge.
-2. **Paquet existant.** Le lire avec `outils/lire_apkg.py`, comprendre ce qui est couvert et comment, puis continuer sans doublon et dans la continuité. Les défauts des anciennes cartes sont signalés à l'élève avec une correction proposée, jamais modifiés sans son accord.
+2. **Paquet existant.** Le lire avec `outils/lire_apkg.py`, comprendre ce qui est couvert et comment, puis continuer sans doublon et dans la continuité. Les anciennes cartes ne sont pas modifiées : le nouveau paquet ne contient que la suite.
 3. **Connaître le prof.** Lire `profs/<matiere>.md`.
-4. **Analyser** le cours en profondeur et écrire `analyse.md` dans le dossier du chapitre : ce qu'il faut maîtriser et comment, le plan des cartes, les visuels prévus (créés ou capturés), les points du cours à signaler. Présenter à l'élève une synthèse courte et attendre son retour avant de produire.
+4. **Analyser** le cours en profondeur et écrire `analyse.md` dans le dossier du chapitre : ce qu'il faut maîtriser et comment, le plan des cartes, les visuels prévus (créés ou capturés), les erreurs du cours repérées. Puis enchaîner directement.
 5. **Produire** les visuels puis les cartes.
 6. **Vérifier.** Générer l'aperçu de toutes les cartes et **regarder chaque image** : rendu des formules, lisibilité des visuels en clair et en sombre, tenue sur téléphone, absence de spoil. Relire la rigueur. Contrôler la couverture du périmètre.
-7. **Livrer** le `.apkg` avec un bilan court : ce qui a été fait, les choix notables, les points signalés.
+7. **Livrer** le `.apkg` avec un bilan court, pour information : ce qui a été fait, les choix notables, les corrections apportées au cours.
 8. **Mettre à jour** `profs/<matiere>.md` avec ce qui a été appris sur le prof, puis commit et push.
 
 ---
